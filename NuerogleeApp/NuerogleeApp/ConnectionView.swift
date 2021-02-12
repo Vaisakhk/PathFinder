@@ -19,10 +19,13 @@ class ConnectionView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        nameLabel.backgroundColor = UIColor.yellow
+        nameLabel.backgroundColor = UIColor.orange
         nameLabel.textColor = .red
-        nameLabel.frame = CGRect(origin: self.frame.origin, size: CGSize(width:  self.frame.size.width, height:  self.frame.size.height))
+        nameLabel.font = UIFont.boldSystemFont(ofSize: 30)
+        nameLabel.textAlignment = .center
+        nameLabel.frame = CGRect(origin: self.bounds.origin, size: CGSize(width:  self.bounds.size.width, height:  self.bounds.size.height))
         self.addSubview(nameLabel)
+        self.clipsToBounds = true
     }
     override func layoutSubviews() {
         NSLayoutConstraint.activate([
