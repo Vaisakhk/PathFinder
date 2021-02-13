@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE9B645525D811B1001E0F37 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B645425D811B1001E0F37 /* Constants.swift */; };
 		CEECCA4225D7528B00823D37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEECCA2625D7528B00823D37 /* Assets.xcassets */; };
 		CEECCA4325D7528B00823D37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEECCA2725D7528B00823D37 /* LaunchScreen.storyboard */; };
 		CEECCA4425D7528B00823D37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEECCA2925D7528B00823D37 /* Main.storyboard */; };
@@ -37,6 +38,7 @@
 /* Begin PBXFileReference section */
 		CE0B4E7A25D52DCA00353CB8 /* NuerogleeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NuerogleeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0B4E8B25D52DCD00353CB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE9B645425D811B1001E0F37 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CEECCA2625D7528B00823D37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEECCA2825D7528B00823D37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEECCA2A25D7528B00823D37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -97,10 +99,19 @@
 				CEECCA3E25D7528B00823D37 /* AppDelegate */,
 				CEECCA2B25D7528B00823D37 /* Module */,
 				CEECCA4125D7528B00823D37 /* CoreData */,
+				CE9B645325D811B1001E0F37 /* Helper */,
 				CEECCA2525D7528B00823D37 /* AppUI */,
 				CE0B4E8B25D52DCD00353CB8 /* Info.plist */,
 			);
 			path = NuerogleeApp;
+			sourceTree = "<group>";
+		};
+		CE9B645325D811B1001E0F37 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				CE9B645425D811B1001E0F37 /* Constants.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 		CEECCA2525D7528B00823D37 /* AppUI */ = {
@@ -340,6 +351,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CEECCA4725D7528B00823D37 /* BoxView.swift in Sources */,
+				CE9B645525D811B1001E0F37 /* Constants.swift in Sources */,
 				CEECCA7A25D758E400823D37 /* HomeProtocol.swift in Sources */,
 				CEECCA7125D7565600823D37 /* CoreDataHandler.swift in Sources */,
 				CEECCA4B25D7528B00823D37 /* BasePresenter.swift in Sources */,

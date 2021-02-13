@@ -11,20 +11,23 @@ import UIKit
 class HomeInteractor: HomePresenterToInteractorProtocol {
     fileprivate var coreDataHandler  = CoreDataHandler.sharedInstance
     fileprivate var currentScore = 0
+    fileprivate var currentLevelModel:Level?
     var presenter: HomeInteractorToPresenterProtocol?
     var timer = Timer()
-    var seconds = 60
+    var seconds = 0
+    var previousMoveTime = 0
     var isTimerRunning = false
     
     var currentLevel: Int? {
         didSet {
-
+            presenter?.updateCurrentLevel()
         }
     }
     
     //MARK:- Game Start informed to Interactor
     func gameHasBeenStarted() {
-        currentLevel = 0
+        currentLevel = getLastLevelPlayed()
+        saveCurrentGameLevel()
     }
     
     func gameHasBeenStopped() {
@@ -70,7 +73,9 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
                         movedConnection.frame = CGRect(origin: CGPoint(x:50*movedConnection.tag,y:Int(maxYValue)-140), size: CGSize(width: 44, height: 44))
                         connection.connectedUser = nil
                     }else {
-                        currentScore +=  connection.connectedUser == movedConnection ? 0 : 1
+                        let tempScore = connection.connectedUser == movedConnection ? 0 : 1
+                        currentScore +=  tempScore
+                        saveCurrentGameScore(isPositive: true, scoreValue: tempScore)
                         presenter?.scoreResultCompletedWithSuccess(score: currentScore)
                         connection.backgroundColor = .green
                         connection.connectedUser = movedConnection
@@ -83,6 +88,7 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
                         }
                     }else {
                         currentScore -= 1
+                        saveCurrentGameScore(isPositive: false, scoreValue: -1)
                         presenter?.scoreResultCompletedWithSuccess(score: currentScore)
                         connection.backgroundColor = .red
                         connection.connectedUser = nil
@@ -94,6 +100,7 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
                     connection.backgroundColor = .blue
                 }else if(connection.connectedUser  == movedConnection) {
                     currentScore -= 1
+                    saveCurrentGameScore(isPositive: false, scoreValue: -1)
                     presenter?.scoreResultCompletedWithSuccess(score: currentScore)
                     connection.connectedUser  = nil
                     connection.backgroundColor = .blue
@@ -113,8 +120,115 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
         return isFinished
     }
     
+    func isLevelClearForNextGame(boxConnections: [BoxView]) {
+        let isFinished = boxConnections.filter { (box) -> Bool in
+            box.connectedUser != nil
+        }.count == boxConnections.count
+        if(isFinished) {
+            currentLevelModel?.isFinished = true
+            coreDataHandler.saveContext()
+            presenter?.levelCompletedWithSuccess(message:getFinishedMessage())
+        }
+    }
+    
+    
     //MARK:- Change Current Level of the Game
     func updateCurrentLevel(by value:Int) {
-        currentLevel! += value
+        if(getLastLevelIsFinished()) {
+            currentLevel! += value
+            currentScore = 0
+            saveCurrentGameLevel()
+            presenter?.scoreResultCompletedWithSuccess(score: currentScore)
+        }
+    }
+    
+    private func getFinishedMessage() ->String {
+        var message = ""
+        message = message + "Congratss Completed " + "\(currentLevel ?? 0)" + " Level\n"
+        message = message + "Your Score is " + "\(currentLevelModel?.score ?? 0)" + "\n"
+        message = message + "Total time Taken for this level " + timeString(time: TimeInterval(currentLevelModel?.timeTaken ?? 0))
+        message = message + "\n Your Movements \n\n"
+        if let scores:[Score] = currentLevelModel?.scores?.allObjects as? [Score] {
+            var tempScore = scores
+            tempScore.sort { (a, b) -> Bool in
+                a.date! < b.date!
+            }
+            for score in tempScore {
+                message = message + "Date "+(score.date ?? "") + "\n"
+                message = message + "Time Taken "+"\(score.time )" + "\n"
+                message = message + "score "+"\(score.score )" + "\n"
+                message = message + (score.isPositiveMove ? " This Move is Success" : "This Move is Failure") + "\n"
+            }
+        }
+        return message
+    }
+    
+    private func saveCurrentGameLevel() {
+        let levelData:[Level] = coreDataHandler.getAllDatasWithPredicate(entity: "Level", predicate: NSPredicate(format: "(level ==  %@)", "\(currentLevel ?? 0)"), sortDescriptor: NSSortDescriptor(key: "level", ascending: true)) as? [Level] ?? []
+        var level = levelData.first
+        if (level == nil) {
+            level  = coreDataHandler.newEntityForName(entityName: "Level") as? Level
+        }else {
+            //seconds = Int(level?.timeTaken ?? 0)
+            //currentScore = Int(level?.score ?? 0)
+            level?.removeFromScores(level?.scores ?? [])
+        }
+        level?.level = Int32(currentLevel ?? 0)
+        level?.timeTaken = Int32(seconds)
+        level?.score = Int32(currentScore)
+        level?.isFinished = false
+        currentLevelModel = level
+        coreDataHandler.saveContext()
+    }
+    
+    private func saveCurrentGameScore(isPositive:Bool, scoreValue:Int) {
+        let score  = coreDataHandler.newEntityForName(entityName: "Score") as? Score
+        score?.currentLevel = currentLevelModel
+        score?.time = Int32(seconds-previousMoveTime)
+        score?.date = getDate()
+        score?.isPositiveMove = isPositive
+        score?.score = Int32(scoreValue)
+        if let tempScrore = score {
+            currentLevelModel?.addToScores(tempScrore)
+            currentLevelModel?.timeTaken = Int32(seconds)
+            currentLevelModel?.score = Int32(currentScore)
+        }
+        coreDataHandler.saveContext()
+        previousMoveTime = seconds
+    }
+    
+    private func getLastLevelPlayed() -> Int {
+        let levelData:[Level] = coreDataHandler.getAllDatasWithPredicate(entity: "Level", predicate: nil, sortDescriptor: NSSortDescriptor(key: "level", ascending: true)) as? [Level] ?? []
+        var levelValue = 1
+        if levelData.count != 0 {
+            if let tempLeaveData = levelData.last {
+                let lastLevelPlayed = Int(tempLeaveData.level)
+                levelValue = tempLeaveData.isFinished ? (lastLevelPlayed+1):lastLevelPlayed
+            }
+        }
+        return levelValue
+    }
+    
+    private func getLastLevelIsFinished() -> Bool {
+        let levelData:[Level] = coreDataHandler.getAllDatasWithPredicate(entity: "Level", predicate: nil, sortDescriptor: NSSortDescriptor(key: "level", ascending: true)) as? [Level] ?? []
+        var isFinished = false
+        if levelData.count != 0 {
+            if let tempLeaveData = levelData.last {
+                isFinished = tempLeaveData.isFinished
+            }
+        }
+        return isFinished
+    }
+    
+    /* TO Get current Date string
+     * return :
+            string      : Returns current date in dd/MM/yyyy hh:mm:ss format
+     */
+    private func getDate() -> String {
+        let dateFormatter:DateFormatter = DateFormatter ()
+        dateFormatter.timeZone = TimeZone.current
+        dateFormatter.dateFormat = "dd/MM/yyyy HH:mm:ss"
+        dateFormatter.calendar = NSCalendar(calendarIdentifier: .gregorian)! as Calendar
+        return dateFormatter.string(from: Date())
     }
 }

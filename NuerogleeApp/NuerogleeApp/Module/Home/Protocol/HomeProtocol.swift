@@ -29,6 +29,7 @@ protocol HomePresenterToViewProtocol: BaseViewProtocol{
     func moveToNextLevel()
     func updateScore()
     func addUserConnection(userView:ConnectionView,forIndex index:Int)
+    func updateCurrentGameLevel(level:String)
 }
 
 protocol HomePresenterToRouterProtocol: RouterProtocal {
@@ -46,6 +47,7 @@ protocol HomePresenterToInteractorProtocol: BaseInteractorProtocol {
     func restartTimer()
     func overlapped(movedConnection:ConnectionView,boxConnections: [BoxView], maxYValue:CGFloat)
     func levelClear(boxConnections: [BoxView]) -> Bool
+    func isLevelClearForNextGame(boxConnections: [BoxView])
 }
 
 protocol HomeInteractorToPresenterProtocol: BaseInteractorToPresenterProtocol {
@@ -53,4 +55,6 @@ protocol HomeInteractorToPresenterProtocol: BaseInteractorToPresenterProtocol {
     func scoreResultData(data:Int)
     func scoreResultCompletedWithSuccess(score:Int)
     func scoreResultCompletedWithError(errorString:String)
+    func levelCompletedWithSuccess(message:String)
+    func updateCurrentLevel()
 }

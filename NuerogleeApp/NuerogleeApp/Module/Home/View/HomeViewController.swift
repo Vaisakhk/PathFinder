@@ -15,6 +15,7 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
+    @IBOutlet weak var levelLabel: UILabel!
     
     
     //MARK:- UIView Life Cycle
@@ -97,7 +98,7 @@ class HomeViewController: UIViewController {
     func checkMove() {
         //score += currentLevel * 2
         view.isUserInteractionEnabled = false
-        UIView.animate(withDuration: 0.5, delay: 1, options: [], animations: {
+        UIView.animate(withDuration: 0.1, delay: 0, options: [], animations: {
             self.renderedLines.alpha = 0
             self.presenter?.userConnections?.forEach { $0.alpha = 0}
             for connection in self.presenter?.boxConnections ?? [] {
@@ -159,5 +160,9 @@ extension HomeViewController : HomePresenterToViewProtocol {
     
     func updateScore() {
         scoreLabel.text = "SCORE: \(presenter?.currentScore ?? 0)"
+    }
+    
+    func updateCurrentGameLevel(level:String) {
+        levelLabel.text = "Level: " + level
     }
 }

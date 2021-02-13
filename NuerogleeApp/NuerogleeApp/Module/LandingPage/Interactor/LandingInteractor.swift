@@ -12,6 +12,10 @@ class LandingInteractor: LandingPresenterToInteractorProtocol {
     var presenter: LandingInteractorToPresenterProtocol?
     
     func getGameScore() {
-        
+        let levelData:[Level] = coreDataHandler.getAllDatasWithPredicate(entity: "Level", predicate: nil, sortDescriptor: NSSortDescriptor(key: "level", ascending: true)) as? [Level] ?? []
+      let totalScore =  levelData.reduce(0) { (sum, level) -> Int in
+            sum + Int(level.score)
+        }
+        presenter?.scoreResultData(data: totalScore)
     }
 }

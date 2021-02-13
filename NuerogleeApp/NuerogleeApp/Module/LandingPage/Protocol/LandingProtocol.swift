@@ -8,6 +8,7 @@
 import Foundation
 
 protocol LandingViewToPresenterProtocol: BasePresenterProtocal{
+    var totalScore:Int?{ get }
     func startGame()
 }
 

@@ -33,7 +33,7 @@ class ViewController: UIViewController {
 //MARK:- Landing Presenter To view Protocol
 extension ViewController : LandingPresenterToViewProtocol {
     func refreshView() {
-        
+        scoreLabel.text = "Total Score : " + "\(presenter?.totalScore ?? 0)"
     }
     
     

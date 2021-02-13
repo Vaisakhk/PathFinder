@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="NuerogleeApp" customModuleProvider="target">
             <connections>
+                <outlet property="levelLabel" destination="J2E-z6-GpE" id="uFX-M1-d4u"/>
                 <outlet property="scoreLabel" destination="xmQ-3M-cAP" id="KFi-N7-BDD"/>
                 <outlet property="timeLabel" destination="Sdb-p3-J01" id="a4R-XA-x9g"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -37,14 +38,26 @@
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdb-p3-J01">
                     <rect key="frame" x="20" y="64" width="58.5" height="20.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="58.5" id="MRr-Jf-0zM"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="15"/>
                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmQ-3M-cAP">
-                    <rect key="frame" x="339" y="64" width="55" height="20.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmQ-3M-cAP">
+                    <rect key="frame" x="294" y="64" width="100" height="20.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="Bkw-E6-NgD"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="15"/>
                     <color key="textColor" systemColor="systemRedColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Level : 1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2E-z6-GpE">
+                    <rect key="frame" x="179" y="64" width="56" height="20.5"/>
+                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="15"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
@@ -55,8 +68,11 @@
                 <constraint firstItem="Bvr-lM-5AA" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="4HF-b0-gmd"/>
                 <constraint firstItem="xmQ-3M-cAP" firstAttribute="top" secondItem="Sdb-p3-J01" secondAttribute="top" id="BHQ-zW-Vgz"/>
                 <constraint firstItem="Sdb-p3-J01" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="BLZ-J0-HTP"/>
-                <constraint firstItem="xmQ-3M-cAP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Sdb-p3-J01" secondAttribute="trailing" constant="10" id="Xl1-yE-Yrm"/>
+                <constraint firstItem="J2E-z6-GpE" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="S2U-sk-oHI"/>
+                <constraint firstItem="xmQ-3M-cAP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="J2E-z6-GpE" secondAttribute="trailing" constant="5" id="aWR-5y-ePK"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Bvr-lM-5AA" secondAttribute="bottom" constant="20" id="cH9-9Z-VZp"/>
+                <constraint firstItem="J2E-z6-GpE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Sdb-p3-J01" secondAttribute="trailing" constant="5" id="cO0-vC-EcZ"/>
+                <constraint firstItem="J2E-z6-GpE" firstAttribute="top" secondItem="Sdb-p3-J01" secondAttribute="top" id="nPf-z4-moC"/>
                 <constraint firstItem="Sdb-p3-J01" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="pI9-Zf-36X"/>
             </constraints>
             <point key="canvasLocation" x="53.623188405797109" y="55.580357142857139"/>

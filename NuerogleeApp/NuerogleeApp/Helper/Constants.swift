@@ -7,17 +7,13 @@
 
 import Foundation
 
-struct UserDefaultKey {
-    static let FIRSTTIME =  "FirstTime"
-}
-
 struct AlertConstants {
     static let yesButtonTitle = "YES"
     static let noButtonTitle = "NO"
     static let saveButtonTitle = "Save"
     static let closeButtonTitle = "Close"
     static let cancelButtonTitle = "Cancel"
-    static let alertTitle = "Tool Tracking"
+    static let alertTitle = "NuerogleeApp"
     static let enterNamePlaceHolder = "Enter friend name"
     static let emptyFriendsName = "Friends name should not be empty."
     static let borrowedAll = "Already borrowed all the items"
