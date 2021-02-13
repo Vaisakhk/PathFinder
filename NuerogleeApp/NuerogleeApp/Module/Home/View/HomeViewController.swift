@@ -55,7 +55,6 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         levelUp()
         presenter?.viewWillAppear(animated: animated)
-        //loadUsers()
     }
     
     func addBackBarButtonCustom() {
@@ -71,7 +70,6 @@ class HomeViewController: UIViewController {
     @IBAction func resetButtonAction(_ sender: Any) {
         currentLevel -= 1
         levelUp()
-        //loadUsers()
     }
     
     func levelUp() {
@@ -92,14 +90,6 @@ class HomeViewController: UIViewController {
             boxConnection.layer.borderColor = UIColor.black.cgColor
             boxConnections.append(boxConnection)
             view.addSubview(boxConnection)
-
-//            connection.dragChanged = { [weak self] in
-//                self?.redrawLines()
-//            }
-
-//            connection.dragFinished = { [weak self] in
-//                self?.checkMove()
-//            }
         }
         
         for i in 0 ..< boxConnections.count {
@@ -109,11 +99,6 @@ class HomeViewController: UIViewController {
                 boxConnections[i].after = boxConnections[i + 1]
             }
         }
-
-//        boxConnections.forEach(place)
-//        for i in 0..<boxConnections.count {
-//            place(boxConnections[i],i)
-//        }
         repeat {
             for i in 0..<boxConnections.count {
                 place(boxConnections[i],i)
@@ -171,20 +156,7 @@ class HomeViewController: UIViewController {
 
         renderedLines.image = renderer.image { ctx in
             for connection in boxConnections {
-                var isLineClear = true
-
-//                for other in connections {
-//                    if linesCross(start1: connection.center, end1: connection.after.center, start2: other.center, end2: other.after.center) != nil {
-//                        isLineClear = false
-//                        break
-//                    }
-//                }
-
-                if isLineClear {
-                    UIColor.green.set()
-                } else {
-                    UIColor.red.set()
-                }
+                UIColor.green.set()
                 ctx.cgContext.setLineWidth(2)
                 ctx.cgContext.strokeLineSegments(between: [connection.after.center, connection.center])
             }
