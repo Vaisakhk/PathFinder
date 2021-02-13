@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="NuerogleeApp" customModuleProvider="target">
             <connections>
+                <outlet property="scoreLabel" destination="xmQ-3M-cAP" id="KFi-N7-BDD"/>
+                <outlet property="timeLabel" destination="Sdb-p3-J01" id="a4R-XA-x9g"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,10 +22,11 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bvr-lM-5AA">
-                    <rect key="frame" x="157" y="802" width="100" height="30"/>
+                    <rect key="frame" x="132" y="802" width="150" height="40"/>
                     <color key="backgroundColor" systemColor="systemPinkColor"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="100" id="ysS-ch-HPW"/>
+                        <constraint firstAttribute="height" constant="40" id="vp8-2H-h9o"/>
+                        <constraint firstAttribute="width" constant="150" id="ysS-ch-HPW"/>
                     </constraints>
                     <state key="normal" title="Reset">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -32,12 +35,29 @@
                         <action selector="resetButtonAction:" destination="-1" eventType="touchUpInside" id="Gyr-qx-Cjo"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sdb-p3-J01">
+                    <rect key="frame" x="20" y="64" width="58.5" height="20.5"/>
+                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="15"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xmQ-3M-cAP">
+                    <rect key="frame" x="335.5" y="64" width="58.5" height="20.5"/>
+                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="15"/>
+                    <color key="textColor" systemColor="systemRedColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xmQ-3M-cAP" secondAttribute="trailing" constant="20" id="3Lp-UL-AGG"/>
                 <constraint firstItem="Bvr-lM-5AA" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="4HF-b0-gmd"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Bvr-lM-5AA" secondAttribute="bottom" constant="30" id="cH9-9Z-VZp"/>
+                <constraint firstItem="xmQ-3M-cAP" firstAttribute="top" secondItem="Sdb-p3-J01" secondAttribute="top" id="BHQ-zW-Vgz"/>
+                <constraint firstItem="Sdb-p3-J01" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="BLZ-J0-HTP"/>
+                <constraint firstItem="xmQ-3M-cAP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Sdb-p3-J01" secondAttribute="trailing" constant="10" id="Xl1-yE-Yrm"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Bvr-lM-5AA" secondAttribute="bottom" constant="20" id="cH9-9Z-VZp"/>
+                <constraint firstItem="Sdb-p3-J01" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="pI9-Zf-36X"/>
             </constraints>
             <point key="canvasLocation" x="53.623188405797109" y="55.580357142857139"/>
         </view>
@@ -48,6 +68,9 @@
         </systemColor>
         <systemColor name="systemPinkColor">
             <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
