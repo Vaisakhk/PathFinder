@@ -7,31 +7,59 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CE0B4E7E25D52DCA00353CB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B4E7D25D52DCA00353CB8 /* AppDelegate.swift */; };
-		CE0B4E8025D52DCA00353CB8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B4E7F25D52DCA00353CB8 /* SceneDelegate.swift */; };
-		CE0B4E8225D52DCA00353CB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0B4E8125D52DCA00353CB8 /* ViewController.swift */; };
-		CE0B4E8525D52DCA00353CB8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0B4E8325D52DCA00353CB8 /* Main.storyboard */; };
-		CE0B4E8725D52DCD00353CB8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE0B4E8625D52DCD00353CB8 /* Assets.xcassets */; };
-		CE0B4E8A25D52DCD00353CB8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE0B4E8825D52DCD00353CB8 /* LaunchScreen.storyboard */; };
-		CEECCA0B25D6298B00823D37 /* ConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA0A25D6298B00823D37 /* ConnectionView.swift */; };
-		CEECCA1525D63D7800823D37 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA1325D63D7800823D37 /* HomeViewController.swift */; };
-		CEECCA1625D63D7800823D37 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEECCA1425D63D7800823D37 /* HomeViewController.xib */; };
-		CEECCA1925D6645B00823D37 /* BoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA1825D6645B00823D37 /* BoxView.swift */; };
+		CEECCA4225D7528B00823D37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEECCA2625D7528B00823D37 /* Assets.xcassets */; };
+		CEECCA4325D7528B00823D37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEECCA2725D7528B00823D37 /* LaunchScreen.storyboard */; };
+		CEECCA4425D7528B00823D37 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEECCA2925D7528B00823D37 /* Main.storyboard */; };
+		CEECCA4725D7528B00823D37 /* BoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA3425D7528B00823D37 /* BoxView.swift */; };
+		CEECCA4825D7528B00823D37 /* ConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA3525D7528B00823D37 /* ConnectionView.swift */; };
+		CEECCA4A25D7528B00823D37 /* BaseInteractorToPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA3925D7528B00823D37 /* BaseInteractorToPresenterProtocol.swift */; };
+		CEECCA4B25D7528B00823D37 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA3A25D7528B00823D37 /* BasePresenter.swift */; };
+		CEECCA4C25D7528B00823D37 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA3B25D7528B00823D37 /* BaseRouter.swift */; };
+		CEECCA4D25D7528B00823D37 /* BaseInteractorProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA3C25D7528B00823D37 /* BaseInteractorProtocol.swift */; };
+		CEECCA4E25D7528B00823D37 /* BaseViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA3D25D7528B00823D37 /* BaseViewProtocol.swift */; };
+		CEECCA4F25D7528B00823D37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA3F25D7528B00823D37 /* AppDelegate.swift */; };
+		CEECCA5025D7528B00823D37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA4025D7528B00823D37 /* SceneDelegate.swift */; };
+		CEECCA5725D7547A00823D37 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEECCA5525D7547A00823D37 /* HomeViewController.xib */; };
+		CEECCA5825D7547A00823D37 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA5625D7547A00823D37 /* HomeViewController.swift */; };
+		CEECCA5F25D7548300823D37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA5E25D7548300823D37 /* ViewController.swift */; };
+		CEECCA6425D754E600823D37 /* LandingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA6325D754E600823D37 /* LandingRouter.swift */; };
+		CEECCA6725D754F500823D37 /* LandingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA6625D754F500823D37 /* LandingProtocol.swift */; };
+		CEECCA6A25D7550700823D37 /* LandingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA6925D7550700823D37 /* LandingPresenter.swift */; };
+		CEECCA6D25D7552A00823D37 /* LandingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA6C25D7552A00823D37 /* LandingInteractor.swift */; };
+		CEECCA7125D7565600823D37 /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA7025D7565600823D37 /* CoreDataHandler.swift */; };
+		CEECCA7425D758CC00823D37 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA7325D758CC00823D37 /* HomeInteractor.swift */; };
+		CEECCA7725D758D900823D37 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA7625D758D900823D37 /* HomePresenter.swift */; };
+		CEECCA7A25D758E400823D37 /* HomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA7925D758E400823D37 /* HomeProtocol.swift */; };
+		CEECCA7D25D758F000823D37 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA7C25D758F000823D37 /* HomeRouter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		CE0B4E7A25D52DCA00353CB8 /* NuerogleeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NuerogleeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE0B4E7D25D52DCA00353CB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		CE0B4E7F25D52DCA00353CB8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CE0B4E8125D52DCA00353CB8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		CE0B4E8425D52DCA00353CB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		CE0B4E8625D52DCD00353CB8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		CE0B4E8925D52DCD00353CB8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE0B4E8B25D52DCD00353CB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CEECCA0A25D6298B00823D37 /* ConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionView.swift; sourceTree = "<group>"; };
-		CEECCA1325D63D7800823D37 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		CEECCA1425D63D7800823D37 /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
-		CEECCA1825D6645B00823D37 /* BoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxView.swift; sourceTree = "<group>"; };
+		CEECCA2625D7528B00823D37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CEECCA2825D7528B00823D37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CEECCA2A25D7528B00823D37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CEECCA3425D7528B00823D37 /* BoxView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxView.swift; sourceTree = "<group>"; };
+		CEECCA3525D7528B00823D37 /* ConnectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectionView.swift; sourceTree = "<group>"; };
+		CEECCA3925D7528B00823D37 /* BaseInteractorToPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseInteractorToPresenterProtocol.swift; sourceTree = "<group>"; };
+		CEECCA3A25D7528B00823D37 /* BasePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
+		CEECCA3B25D7528B00823D37 /* BaseRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
+		CEECCA3C25D7528B00823D37 /* BaseInteractorProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseInteractorProtocol.swift; sourceTree = "<group>"; };
+		CEECCA3D25D7528B00823D37 /* BaseViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewProtocol.swift; sourceTree = "<group>"; };
+		CEECCA3F25D7528B00823D37 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CEECCA4025D7528B00823D37 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CEECCA5525D7547A00823D37 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		CEECCA5625D7547A00823D37 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CEECCA5E25D7548300823D37 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CEECCA6325D754E600823D37 /* LandingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingRouter.swift; sourceTree = "<group>"; };
+		CEECCA6625D754F500823D37 /* LandingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingProtocol.swift; sourceTree = "<group>"; };
+		CEECCA6925D7550700823D37 /* LandingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPresenter.swift; sourceTree = "<group>"; };
+		CEECCA6C25D7552A00823D37 /* LandingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingInteractor.swift; sourceTree = "<group>"; };
+		CEECCA7025D7565600823D37 /* CoreDataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
+		CEECCA7325D758CC00823D37 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		CEECCA7625D758D900823D37 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		CEECCA7925D758E400823D37 /* HomeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocol.swift; sourceTree = "<group>"; };
+		CEECCA7C25D758F000823D37 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,19 +92,177 @@
 		CE0B4E7C25D52DCA00353CB8 /* NuerogleeApp */ = {
 			isa = PBXGroup;
 			children = (
-				CE0B4E7D25D52DCA00353CB8 /* AppDelegate.swift */,
-				CE0B4E7F25D52DCA00353CB8 /* SceneDelegate.swift */,
-				CE0B4E8125D52DCA00353CB8 /* ViewController.swift */,
-				CEECCA0A25D6298B00823D37 /* ConnectionView.swift */,
-				CEECCA1825D6645B00823D37 /* BoxView.swift */,
-				CE0B4E8325D52DCA00353CB8 /* Main.storyboard */,
-				CE0B4E8625D52DCD00353CB8 /* Assets.xcassets */,
-				CE0B4E8825D52DCD00353CB8 /* LaunchScreen.storyboard */,
+				CEECCA3E25D7528B00823D37 /* AppDelegate */,
+				CEECCA2B25D7528B00823D37 /* Module */,
+				CEECCA4125D7528B00823D37 /* CoreData */,
+				CEECCA2525D7528B00823D37 /* AppUI */,
 				CE0B4E8B25D52DCD00353CB8 /* Info.plist */,
-				CEECCA1325D63D7800823D37 /* HomeViewController.swift */,
-				CEECCA1425D63D7800823D37 /* HomeViewController.xib */,
 			);
 			path = NuerogleeApp;
+			sourceTree = "<group>";
+		};
+		CEECCA2525D7528B00823D37 /* AppUI */ = {
+			isa = PBXGroup;
+			children = (
+				CEECCA2625D7528B00823D37 /* Assets.xcassets */,
+				CEECCA2725D7528B00823D37 /* LaunchScreen.storyboard */,
+				CEECCA2925D7528B00823D37 /* Main.storyboard */,
+			);
+			path = AppUI;
+			sourceTree = "<group>";
+		};
+		CEECCA2B25D7528B00823D37 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				CEECCA3625D7528B00823D37 /* LandingPage */,
+				CEECCA2C25D7528B00823D37 /* Home */,
+				CEECCA3325D7528B00823D37 /* CustomView */,
+				CEECCA3825D7528B00823D37 /* Base */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		CEECCA2C25D7528B00823D37 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CEECCA5425D7547A00823D37 /* View */,
+				CEECCA3125D7528B00823D37 /* Interactor */,
+				CEECCA2D25D7528B00823D37 /* Presenter */,
+				CEECCA6125D754AC00823D37 /* Protocol */,
+				CEECCA3225D7528B00823D37 /* Router */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		CEECCA2D25D7528B00823D37 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CEECCA7625D758D900823D37 /* HomePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		CEECCA3125D7528B00823D37 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				CEECCA7325D758CC00823D37 /* HomeInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		CEECCA3225D7528B00823D37 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				CEECCA7C25D758F000823D37 /* HomeRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		CEECCA3325D7528B00823D37 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				CEECCA3425D7528B00823D37 /* BoxView.swift */,
+				CEECCA3525D7528B00823D37 /* ConnectionView.swift */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
+		CEECCA3625D7528B00823D37 /* LandingPage */ = {
+			isa = PBXGroup;
+			children = (
+				CEECCA5D25D7548300823D37 /* View */,
+				CEECCA5C25D7548300823D37 /* Interactor */,
+				CEECCA5B25D7548300823D37 /* Presenter */,
+				CEECCA6225D754B300823D37 /* Protocol */,
+				CEECCA5A25D7548300823D37 /* Router */,
+			);
+			path = LandingPage;
+			sourceTree = "<group>";
+		};
+		CEECCA3825D7528B00823D37 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				CEECCA3925D7528B00823D37 /* BaseInteractorToPresenterProtocol.swift */,
+				CEECCA3A25D7528B00823D37 /* BasePresenter.swift */,
+				CEECCA3B25D7528B00823D37 /* BaseRouter.swift */,
+				CEECCA3C25D7528B00823D37 /* BaseInteractorProtocol.swift */,
+				CEECCA3D25D7528B00823D37 /* BaseViewProtocol.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		CEECCA3E25D7528B00823D37 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				CEECCA3F25D7528B00823D37 /* AppDelegate.swift */,
+				CEECCA4025D7528B00823D37 /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		CEECCA4125D7528B00823D37 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				CEECCA7025D7565600823D37 /* CoreDataHandler.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		CEECCA5425D7547A00823D37 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEECCA5625D7547A00823D37 /* HomeViewController.swift */,
+				CEECCA5525D7547A00823D37 /* HomeViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CEECCA5A25D7548300823D37 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				CEECCA6325D754E600823D37 /* LandingRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		CEECCA5B25D7548300823D37 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CEECCA6925D7550700823D37 /* LandingPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		CEECCA5C25D7548300823D37 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				CEECCA6C25D7552A00823D37 /* LandingInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		CEECCA5D25D7548300823D37 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CEECCA5E25D7548300823D37 /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CEECCA6125D754AC00823D37 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				CEECCA7925D758E400823D37 /* HomeProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		CEECCA6225D754B300823D37 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				CEECCA6625D754F500823D37 /* LandingProtocol.swift */,
+			);
+			path = Protocol;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,10 +322,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE0B4E8A25D52DCD00353CB8 /* LaunchScreen.storyboard in Resources */,
-				CE0B4E8725D52DCD00353CB8 /* Assets.xcassets in Resources */,
-				CE0B4E8525D52DCA00353CB8 /* Main.storyboard in Resources */,
-				CEECCA1625D63D7800823D37 /* HomeViewController.xib in Resources */,
+				CEECCA4425D7528B00823D37 /* Main.storyboard in Resources */,
+				CEECCA4225D7528B00823D37 /* Assets.xcassets in Resources */,
+				CEECCA4325D7528B00823D37 /* LaunchScreen.storyboard in Resources */,
+				CEECCA5725D7547A00823D37 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,32 +336,46 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEECCA1525D63D7800823D37 /* HomeViewController.swift in Sources */,
-				CE0B4E8225D52DCA00353CB8 /* ViewController.swift in Sources */,
-				CEECCA1925D6645B00823D37 /* BoxView.swift in Sources */,
-				CE0B4E7E25D52DCA00353CB8 /* AppDelegate.swift in Sources */,
-				CEECCA0B25D6298B00823D37 /* ConnectionView.swift in Sources */,
-				CE0B4E8025D52DCA00353CB8 /* SceneDelegate.swift in Sources */,
+				CEECCA4725D7528B00823D37 /* BoxView.swift in Sources */,
+				CEECCA7A25D758E400823D37 /* HomeProtocol.swift in Sources */,
+				CEECCA7125D7565600823D37 /* CoreDataHandler.swift in Sources */,
+				CEECCA4B25D7528B00823D37 /* BasePresenter.swift in Sources */,
+				CEECCA4C25D7528B00823D37 /* BaseRouter.swift in Sources */,
+				CEECCA6725D754F500823D37 /* LandingProtocol.swift in Sources */,
+				CEECCA6A25D7550700823D37 /* LandingPresenter.swift in Sources */,
+				CEECCA6D25D7552A00823D37 /* LandingInteractor.swift in Sources */,
+				CEECCA4825D7528B00823D37 /* ConnectionView.swift in Sources */,
+				CEECCA7D25D758F000823D37 /* HomeRouter.swift in Sources */,
+				CEECCA6425D754E600823D37 /* LandingRouter.swift in Sources */,
+				CEECCA5F25D7548300823D37 /* ViewController.swift in Sources */,
+				CEECCA4E25D7528B00823D37 /* BaseViewProtocol.swift in Sources */,
+				CEECCA5825D7547A00823D37 /* HomeViewController.swift in Sources */,
+				CEECCA5025D7528B00823D37 /* SceneDelegate.swift in Sources */,
+				CEECCA4A25D7528B00823D37 /* BaseInteractorToPresenterProtocol.swift in Sources */,
+				CEECCA4F25D7528B00823D37 /* AppDelegate.swift in Sources */,
+				CEECCA7725D758D900823D37 /* HomePresenter.swift in Sources */,
+				CEECCA4D25D7528B00823D37 /* BaseInteractorProtocol.swift in Sources */,
+				CEECCA7425D758CC00823D37 /* HomeInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		CE0B4E8325D52DCA00353CB8 /* Main.storyboard */ = {
+		CEECCA2725D7528B00823D37 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				CE0B4E8425D52DCA00353CB8 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		CE0B4E8825D52DCD00353CB8 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CE0B4E8925D52DCD00353CB8 /* Base */,
+				CEECCA2825D7528B00823D37 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		CEECCA2925D7528B00823D37 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CEECCA2A25D7528B00823D37 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

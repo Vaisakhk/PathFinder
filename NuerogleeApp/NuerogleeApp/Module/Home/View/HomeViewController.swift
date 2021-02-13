@@ -8,6 +8,8 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+    var presenter: HomeViewToPresenterProtocol?
+    
     var currentLevel = 0
     var boxConnections = [BoxView]()
     var userConnections = [ConnectionView]()
@@ -286,4 +288,13 @@ extension ClosedRange where Element: Hashable {
         let random = Int(arc4random_uniform(UInt32(valid.count)))
         return Array(valid)[random]
     }
+}
+
+//MARK:- Home Presenter To view Protocol
+extension HomeViewController : HomePresenterToViewProtocol {
+    func refreshView() {
+        
+    }
+    
+    
 }
