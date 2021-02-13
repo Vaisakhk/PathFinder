@@ -22,7 +22,7 @@ class HomePresenter: HomeViewToPresenterProtocol {
 
     //MARK:- Called when view will appear called from controller
     func viewWillAppear(animated: Bool) {
-        
+        startGameTimer()
     }
     
     //MARK:- To Start Game
@@ -33,10 +33,22 @@ class HomePresenter: HomeViewToPresenterProtocol {
     func moveToLandingView() {
         _router?.dissmissView()
     }
+    
+    func startGameTimer() {
+        _interactor?.startTimer()
+    }
+    
+    func restartGameTimer() {
+        _interactor?.restartTimer()
+    }
 }
 
 //MARK:- Interactor to presenter Protocols
 extension HomePresenter : HomeInteractorToPresenterProtocol {
+    func timerResultData(seconds: Int, timeString: String) {
+        _view?.showTimerString(time: timeString, timeSeconds: seconds)
+    }
+    
     func scoreResultData(data: Int) {
         
     }

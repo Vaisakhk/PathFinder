@@ -16,9 +16,7 @@ class HomeViewController: UIViewController {
     var boxX = [CGPoint]()
     let renderedLines = UIImageView()
     var resultDict:[String:Bool] = [:]
-    var seconds = 60
-    var timer = Timer()
-    var isTimerRunning = false
+    var seconds = 0
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     
@@ -56,6 +54,7 @@ class HomeViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         levelUp()
+        presenter?.viewWillAppear(animated: animated)
         //loadUsers()
     }
     
@@ -75,35 +74,8 @@ class HomeViewController: UIViewController {
         //loadUsers()
     }
     
-    func runTimer() {
-        resetTimer()
-         timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
-    }
-    
-    @objc func updateTimer() {
-        seconds += 1     //This will decrement(count down)the seconds.
-        timeLabel.text = timeString(time: TimeInterval(seconds)) //This will update the label.
-        if(seconds == 5) {
-            boxConnections.forEach { $0.nameLabel.isHidden = true}
-            loadUsers()
-        }
-    }
-    
-    func resetTimer() {
-        timer.invalidate()
-        seconds = 0
-        timeLabel.text = "00:00:00"
-    }
-    
-    func timeString(time:TimeInterval) -> String {
-        let hours = Int(time) / 3600
-        let minutes = Int(time) / 60 % 60
-        let seconds = Int(time) % 60
-        return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
-    }
-    
     func levelUp() {
-        runTimer()
+        presenter?.startGameTimer()
         currentLevel += 1
         boxConnections.forEach { $0.removeFromSuperview() }
         boxConnections.removeAll()
@@ -301,6 +273,15 @@ extension ClosedRange where Element: Hashable {
 
 //MARK:- Home Presenter To view Protocol
 extension HomeViewController : HomePresenterToViewProtocol {
+    func showTimerString(time:String, timeSeconds:Int) {
+        seconds = timeSeconds
+        timeLabel.text = time
+        if(seconds == 5) {
+            boxConnections.forEach { $0.nameLabel.isHidden = true}
+            loadUsers()
+        }
+    }
+    
     func refreshView() {
         
     }
