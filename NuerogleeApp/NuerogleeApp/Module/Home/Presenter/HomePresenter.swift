@@ -9,18 +9,13 @@ import Foundation
 import UIKit
 
 class HomePresenter: HomeViewToPresenterProtocol {
-    
-    
+
     private var _view: HomePresenterToViewProtocol?
     private var _interactor: HomePresenterToInteractorProtocol?
     private var _router: HomePresenterToRouterProtocol?
     private var _maxYValue:CGFloat?
     private var currentSecond = 0
-    var currentLevel: Int? {
-        didSet {
 
-        }
-    }
     var currentScore:Int?{
         didSet {
             _view?.updateScore()
@@ -44,7 +39,7 @@ class HomePresenter: HomeViewToPresenterProtocol {
         _router = router
         _interactor = interactor
         _maxYValue = maxYValue
-        currentLevel = 0
+//        currentLevel = 0
         currentScore = 0
         boxConnections = []
         userConnections = []
@@ -53,7 +48,7 @@ class HomePresenter: HomeViewToPresenterProtocol {
     //MARK:- Called when view will appear called from controller
     func viewWillAppear(animated: Bool) {
         //startGameTimer()
-
+        _interactor?.gameHasBeenStarted()
         levelUp()
     }
     
@@ -63,6 +58,7 @@ class HomePresenter: HomeViewToPresenterProtocol {
     }
     
     func moveToLandingView() {
+        _interactor?.gameHasBeenStopped()
         _router?.dissmissView()
     }
     
@@ -74,19 +70,21 @@ class HomePresenter: HomeViewToPresenterProtocol {
         _interactor?.restartTimer()
     }
     func reStartCurrentGame() {
-        currentLevel! -= 1
+        //currentLevel! -= 1
+        _interactor?.updateCurrentLevel(by: -1)
         levelUp()
     }
     
     func levelUp() {
         startGameTimer()
-        currentLevel! += 1
+        //currentLevel! += 1
+        _interactor?.updateCurrentLevel(by: 1)
         boxConnections?.forEach { $0.removeFromSuperview() }
         boxConnections?.removeAll()
         userConnections?.forEach { $0.removeFromSuperview() }
         userConnections?.removeAll()
-        
-        for i in 1...(currentLevel! + 4 > 6 ? 6 : currentLevel! + 4) {
+        let currentLevel = _interactor?.currentLevel ?? 0
+        for i in 1...(currentLevel + 4 > 6 ? 6 : currentLevel + 4) {
             let boxConnection = BoxView(frame: CGRect(origin: .zero, size: CGSize(width: 80, height: 80)))
             boxConnection.tag = i
             boxConnections?.append(boxConnection)
@@ -113,7 +111,8 @@ class HomePresenter: HomeViewToPresenterProtocol {
     func loadUsers () {
         userConnections?.forEach { $0.removeFromSuperview() }
         userConnections?.removeAll()
-        for i in 1...(currentLevel! + 4 > 6 ? 6 : currentLevel! + 4) {
+        let currentLevel = _interactor?.currentLevel ?? 0
+        for i in 1...(currentLevel + 4 > 6 ? 6 : currentLevel + 4) {
             let connection = ConnectionView(frame: CGRect(origin: .zero, size: CGSize(width: 44, height: 44)))
             connection.tag = i
             userConnections!.append(connection)

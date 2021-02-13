@@ -12,27 +12,41 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
     fileprivate var coreDataHandler  = CoreDataHandler.sharedInstance
     fileprivate var currentScore = 0
     var presenter: HomeInteractorToPresenterProtocol?
-    
     var timer = Timer()
     var seconds = 60
     var isTimerRunning = false
     
+    var currentLevel: Int? {
+        didSet {
+
+        }
+    }
+    
+    //MARK:- Game Start informed to Interactor
+    func gameHasBeenStarted() {
+        currentLevel = 0
+    }
+    
+    func gameHasBeenStopped() {
+        currentLevel = 0
+        currentScore = 0
+        timer.invalidate()
+    }
     //MARK:- Get total score
     func getGameScore() {
         
     }
     
+    //MARK:- Timer Functionality
     func startTimer() {
-        runTimer()
+        restartTimer()
+         timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
     }
     
     func restartTimer() {
-        resetTimer()
-    }
-    
-    func runTimer() {
-        resetTimer()
-         timer = Timer.scheduledTimer(timeInterval: 1, target: self,   selector: (#selector(updateTimer)), userInfo: nil, repeats: true)
+        timer.invalidate()
+        seconds = 0
+        presenter?.timerResultData(seconds: seconds, timeString: "00:00:00")
     }
     
     @objc func updateTimer() {
@@ -40,14 +54,7 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
         presenter?.timerResultData(seconds: seconds, timeString: timeString(time: TimeInterval(seconds)) )
     }
     
-    func resetTimer() {
-        timer.invalidate()
-        seconds = 0
-//        timeLabel.text = "00:00:00"
-        presenter?.timerResultData(seconds: seconds, timeString: "00:00:00")
-    }
-    
-    func timeString(time:TimeInterval) -> String {
+    private func timeString(time:TimeInterval) -> String {
         let hours = Int(time) / 3600
         let minutes = Int(time) / 60 % 60
         let seconds = Int(time) % 60
@@ -104,5 +111,10 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
         }.count == boxConnections.count
 
         return isFinished
+    }
+    
+    //MARK:- Change Current Level of the Game
+    func updateCurrentLevel(by value:Int) {
+        currentLevel! += value
     }
 }

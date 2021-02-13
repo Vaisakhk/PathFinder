@@ -15,7 +15,7 @@ protocol HomeViewToPresenterProtocol: BasePresenterProtocal{
     func startGameTimer()
     func restartGameTimer()
     func reStartCurrentGame()
-    var currentLevel:Int?{ get }
+//    var currentLevel:Int?{ get }
     var currentScore:Int?{ get }
     var boxConnections:[BoxView]? { get }
     var userConnections:[ConnectionView]? { get }
@@ -37,6 +37,10 @@ protocol HomePresenterToRouterProtocol: RouterProtocal {
 
 protocol HomePresenterToInteractorProtocol: BaseInteractorProtocol {
     var presenter:HomeInteractorToPresenterProtocol? {get set}
+    var currentLevel:Int?{ get }
+    func updateCurrentLevel(by value:Int)
+    func gameHasBeenStarted()
+    func gameHasBeenStopped()
     func getGameScore()
     func startTimer()
     func restartTimer()
