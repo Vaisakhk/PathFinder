@@ -10,21 +10,12 @@ import UIKit
 class HomeViewController: UIViewController {
     var presenter: HomeViewToPresenterProtocol?
     
-    var currentLevel = 0
-    var boxConnections = [BoxView]()
-    var userConnections = [ConnectionView]()
     var boxX = [CGPoint]()
     let renderedLines = UIImageView()
-    var resultDict:[String:Bool] = [:]
-    var seconds = 0
+    
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     
-    var score = 0 {
-        didSet {
-            scoreLabel.text = "SCORE: \(score)"
-        }
-    }
     
     //MARK:- UIView Life Cycle
     override func viewDidLoad() {
@@ -53,10 +44,10 @@ class HomeViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        levelUp()
         presenter?.viewWillAppear(animated: animated)
     }
     
+    //MARK:- UIView Customization
     func addBackBarButtonCustom() {
         let barButton = UIBarButtonItem(image: UIImage(named: "backArrow"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.backButtonaction))
         self.navigationItem.leftBarButtonItem = barButton
@@ -68,75 +59,13 @@ class HomeViewController: UIViewController {
     }
     
     @IBAction func resetButtonAction(_ sender: Any) {
-        currentLevel -= 1
-        levelUp()
-    }
-    
-    func levelUp() {
-        presenter?.startGameTimer()
-        currentLevel += 1
-        boxConnections.forEach { $0.removeFromSuperview() }
-        boxConnections.removeAll()
-        userConnections.forEach { $0.removeFromSuperview() }
-        userConnections.removeAll()
-        
-        for i in 1...(currentLevel + 4 > 6 ? 6 : currentLevel + 4) {
-            let boxConnection = BoxView(frame: CGRect(origin: .zero, size: CGSize(width: 80, height: 80)))
-            boxConnection.tag = i
-            boxConnection.nameLabel.text = "\(i)"
-            boxConnection.backgroundColor = .blue
-            boxConnection.layer.cornerRadius = 5
-            boxConnection.layer.borderWidth = 2
-            boxConnection.layer.borderColor = UIColor.black.cgColor
-            boxConnections.append(boxConnection)
-            view.addSubview(boxConnection)
-        }
-        
-        for i in 0 ..< boxConnections.count {
-            if i == boxConnections.count - 1 {
-                boxConnections[i].after = boxConnections[i]//connections[0]
-            } else {
-                boxConnections[i].after = boxConnections[i + 1]
-            }
-        }
-        repeat {
-            for i in 0..<boxConnections.count {
-                place(boxConnections[i],i)
-            }
-        } while levelClear()
-        redrawLines()
-    }
-    
-    func loadUsers () {
-        userConnections.forEach { $0.removeFromSuperview() }
-        userConnections.removeAll()
-        for i in 1...(currentLevel + 4 > 6 ? 6 : currentLevel + 4) {
-            let connection = ConnectionView(frame: CGRect(origin: CGPoint(x:50*i,y:Int(view.bounds.maxY)-140), size: CGSize(width: 44, height: 44)))
-            connection.tag = i
-            connection.nameLabel.text = "\(i)"
-            connection.backgroundColor = .blue
-            connection.layer.cornerRadius = 22
-            connection.layer.borderWidth = 2
-            userConnections.append(connection)
-            view.addSubview(connection)
-            connection.dragChanged = { [weak self] in
-                //self?.overlapped(movedConnection: connection)
-            }
-            connection.dragFinished = { [weak self] in
-                if ((self?.seconds ?? 0) > 5) {
-                self?.overlapped(movedConnection: connection)
-                self?.checkMove()
-                }else {
-                    
-                }
-            }
-        }
+        presenter?.reStartCurrentGame()
     }
     
     func place(_ connection: UIView,_ index:Int) {
         var randomX = CGFloat.random(in: 50...view.bounds.maxX - 50)//boxX[index].x//
         var randomY = CGFloat.random(in: 150...view.bounds.maxY - 200) //boxX[index].y//
-        let filterResult = boxConnections.filter { (tempView) -> Bool in
+        let filterResult = presenter?.boxConnections!.filter { (tempView) -> Bool in
             let tempViewCenter = tempView.center
             if((randomX+50>tempViewCenter.x && randomX-50<tempViewCenter.x) &&
                 (randomY+50>tempViewCenter.y && randomY-50<tempViewCenter.y) || ((randomX == tempViewCenter.x) && (randomY == tempViewCenter.y))) {
@@ -144,92 +73,41 @@ class HomeViewController: UIViewController {
             }
             return false
         }
-        if(filterResult.count != 0) {
+        if(filterResult?.count != 0) {
             randomX = randomX + 50
             randomY = randomY + 50
         }
         connection.center = CGPoint(x: randomX, y: randomY)
+        view.addSubview(connection)
     }
     
     func redrawLines() {
         let renderer = UIGraphicsImageRenderer(bounds: view.bounds)
 
         renderedLines.image = renderer.image { ctx in
-            for connection in boxConnections {
+            for connection in presenter?.boxConnections ?? [] {
                 UIColor.green.set()
                 ctx.cgContext.setLineWidth(2)
                 ctx.cgContext.strokeLineSegments(between: [connection.after.center, connection.center])
             }
         }
     }
-
-    func overlapped(movedConnection:ConnectionView) {
-        for connection in boxConnections {
-            if((movedConnection.frame.origin.x>=connection.frame.origin.x && movedConnection.frame.origin.x <= connection.frame.origin.x + connection.frame.width) && movedConnection.frame.origin.y>=connection.frame.origin.y && movedConnection.frame.origin.y <= connection.frame.origin.y + connection.frame.height) {
-                if(movedConnection.tag == connection.tag) {
-                    if(connection.connectedUser != nil && connection.connectedUser != movedConnection) {
-                        movedConnection.frame = CGRect(origin: CGPoint(x:50*movedConnection.tag,y:Int(view.bounds.maxY)-140), size: CGSize(width: 44, height: 44))
-                        connection.connectedUser = nil
-                    }else {
-                        score +=  connection.connectedUser == movedConnection ? 0 : 1
-                        connection.backgroundColor = .green
-                        connection.connectedUser = movedConnection
-                    }
-                }else {
-                    if(connection.connectedUser != nil && connection.connectedUser != movedConnection) {
-                        movedConnection.frame = CGRect(origin: CGPoint(x:50*movedConnection.tag,y:Int(view.bounds.maxY)-140), size: CGSize(width: 44, height: 44))
-                        if(connection.tag != connection.connectedUser?.tag){
-                        connection.connectedUser = nil
-                        }
-                    }else {
-                        score -= 1
-                        connection.backgroundColor = .red
-                        connection.connectedUser = nil
-                        movedConnection.frame = CGRect(origin: CGPoint(x:50*movedConnection.tag,y:Int(view.bounds.maxY)-140), size: CGSize(width: 44, height: 44))
-                    }
-                }
-            }else {
-                if(connection.connectedUser  == nil) {
-                    connection.backgroundColor = .blue
-                }else if(connection.connectedUser  == movedConnection) {
-                    score -= 1
-                    connection.connectedUser  = nil
-                    connection.backgroundColor = .blue
-                    movedConnection.frame = CGRect(origin: CGPoint(x:50*movedConnection.tag,y:Int(view.bounds.maxY)-140), size: CGSize(width: 44, height: 44))
-                }
-
-            }
-        }
-    }
-    
-    //TO Check if any crossing between views
-    func levelClear() -> Bool {
-        let isFinished = boxConnections.filter { (box) -> Bool in
-            box.connectedUser != nil
-        }.count == boxConnections.count
-
-        return isFinished
-    }
     
     //MARK:- Move to next level
     func checkMove() {
-        if levelClear() {
-            //score += currentLevel * 2
-            view.isUserInteractionEnabled = false
-
-            UIView.animate(withDuration: 0.5, delay: 1, options: [], animations: {
-                self.renderedLines.alpha = 0
-
-                self.userConnections.forEach { $0.alpha = 0}
-                for connection in self.boxConnections {
-                    connection.alpha = 0
-                }
-            }) { finished in
-                self.view.isUserInteractionEnabled = true
-                self.renderedLines.alpha = 1
-                self.levelUp()
+        //score += currentLevel * 2
+        view.isUserInteractionEnabled = false
+        UIView.animate(withDuration: 0.5, delay: 1, options: [], animations: {
+            self.renderedLines.alpha = 0
+            self.presenter?.userConnections?.forEach { $0.alpha = 0}
+            for connection in self.presenter?.boxConnections ?? [] {
+                connection.alpha = 0
             }
-        } else {
+        }) { finished in
+            self.view.isUserInteractionEnabled = true
+            self.renderedLines.alpha = 1
+            //self.levelUp()
+            self.presenter?.levelUp()
         }
     }
 }
@@ -246,17 +124,40 @@ extension ClosedRange where Element: Hashable {
 //MARK:- Home Presenter To view Protocol
 extension HomeViewController : HomePresenterToViewProtocol {
     func showTimerString(time:String, timeSeconds:Int) {
-        seconds = timeSeconds
         timeLabel.text = time
-        if(seconds == 5) {
-            boxConnections.forEach { $0.nameLabel.isHidden = true}
-            loadUsers()
-        }
     }
     
     func refreshView() {
         
     }
     
+    func placeBoxView(boxView: BoxView,for index:Int) {
+        boxView.nameLabel.text = "\(index+1)"
+        boxView.backgroundColor = .blue
+        boxView.layer.cornerRadius = 5
+        boxView.layer.borderWidth = 2
+        boxView.layer.borderColor = UIColor.black.cgColor
+        place(boxView, index)
+    }
     
+    func drawLinesBetweenBox() {
+        redrawLines()
+    }
+    
+    func addUserConnection(userView:ConnectionView,forIndex index:Int) {
+        userView.nameLabel.text = "\(index)"
+        userView.backgroundColor = .blue
+        userView.layer.cornerRadius = 22
+        userView.layer.borderWidth = 2
+        userView.frame = CGRect(origin: CGPoint(x:index*50,y:Int(view.bounds.maxY)-140), size: CGSize(width: 44, height: 44))
+        self.view.addSubview(userView)
+    }
+    
+    func moveToNextLevel () {
+        self.checkMove()
+    }
+    
+    func updateScore() {
+        scoreLabel.text = "SCORE: \(presenter?.currentScore ?? 0)"
+    }
 }

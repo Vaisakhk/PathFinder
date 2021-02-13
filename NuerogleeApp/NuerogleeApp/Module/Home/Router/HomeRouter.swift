@@ -14,7 +14,7 @@ class HomeRouter: BaseRouter {
         super.init(viewController: UINavigationController(rootViewController: view))
         let interactor: HomePresenterToInteractorProtocol = HomeInteractor()
         let router:HomePresenterToRouterProtocol = self
-        let presenter: HomeViewToPresenterProtocol & HomeInteractorToPresenterProtocol = HomePresenter(router: router, view: view, interactor: interactor)
+        let presenter: HomeViewToPresenterProtocol & HomeInteractorToPresenterProtocol = HomePresenter(router: router, view: view, interactor: interactor, maxYValue: UIScreen.main.bounds.maxY)
         view.presenter = presenter
         interactor.presenter = presenter
     }
