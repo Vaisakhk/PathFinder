@@ -29,6 +29,10 @@ class HomePresenter: HomeViewToPresenterProtocol {
     func startGame() {
         
     }
+    
+    func moveToLandingView() {
+        _router?.dissmissView()
+    }
 }
 
 //MARK:- Interactor to presenter Protocols

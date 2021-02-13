@@ -51,7 +51,7 @@ class HomeViewController: UIViewController {
             renderedLines.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             renderedLines.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         ])
-        
+        addBackBarButtonCustom()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -59,7 +59,16 @@ class HomeViewController: UIViewController {
         //loadUsers()
     }
     
+    func addBackBarButtonCustom() {
+        let barButton = UIBarButtonItem(image: UIImage(named: "backArrow"), style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.backButtonaction))
+        self.navigationItem.leftBarButtonItem = barButton
+    }
+    
     //MARK:- UIView Action
+    @objc func backButtonaction() {
+        presenter?.moveToLandingView()
+    }
+    
     @IBAction func resetButtonAction(_ sender: Any) {
         currentLevel -= 1
         levelUp()

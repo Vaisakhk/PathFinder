@@ -1,8 +1,8 @@
 //
 //  CoreDataHandler.swift
-//  ToolTracking
+//  NuerogleeApp
 //
-//  Created by User on 12/25/20.
+//  Created by User on 13/02/21.
 //
 
 import Foundation
@@ -12,7 +12,7 @@ class CoreDataHandler {
     public static let sharedInstance = CoreDataHandler()
     
     lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "ToolTracking")
+        let container = NSPersistentContainer(name: "NuerogleeApp")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             container.viewContext.automaticallyMergesChangesFromParent = true
             container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy

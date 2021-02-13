@@ -9,6 +9,7 @@ import Foundation
 
 protocol HomeViewToPresenterProtocol: BasePresenterProtocal{
     func startGame()
+    func moveToLandingView()
 }
 
 protocol HomePresenterToViewProtocol: BaseViewProtocol{

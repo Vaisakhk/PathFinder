@@ -31,6 +31,7 @@
 		CEECCA7725D758D900823D37 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA7625D758D900823D37 /* HomePresenter.swift */; };
 		CEECCA7A25D758E400823D37 /* HomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA7925D758E400823D37 /* HomeProtocol.swift */; };
 		CEECCA7D25D758F000823D37 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA7C25D758F000823D37 /* HomeRouter.swift */; };
+		CEECCA8225D75CF200823D37 /* NuerogleeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA8025D75CF200823D37 /* NuerogleeApp.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		CEECCA7625D758D900823D37 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
 		CEECCA7925D758E400823D37 /* HomeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocol.swift; sourceTree = "<group>"; };
 		CEECCA7C25D758F000823D37 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		CEECCA8125D75CF200823D37 /* NuerogleeApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NuerogleeApp.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -204,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				CEECCA7025D7565600823D37 /* CoreDataHandler.swift */,
+				CEECCA8025D75CF200823D37 /* NuerogleeApp.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -353,6 +356,7 @@
 				CEECCA5025D7528B00823D37 /* SceneDelegate.swift in Sources */,
 				CEECCA4A25D7528B00823D37 /* BaseInteractorToPresenterProtocol.swift in Sources */,
 				CEECCA4F25D7528B00823D37 /* AppDelegate.swift in Sources */,
+				CEECCA8225D75CF200823D37 /* NuerogleeApp.xcdatamodeld in Sources */,
 				CEECCA7725D758D900823D37 /* HomePresenter.swift in Sources */,
 				CEECCA4D25D7528B00823D37 /* BaseInteractorProtocol.swift in Sources */,
 				CEECCA7425D758CC00823D37 /* HomeInteractor.swift in Sources */,
@@ -559,6 +563,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		CEECCA8025D75CF200823D37 /* NuerogleeApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				CEECCA8125D75CF200823D37 /* NuerogleeApp.xcdatamodel */,
+			);
+			currentVersion = CEECCA8125D75CF200823D37 /* NuerogleeApp.xcdatamodel */;
+			path = NuerogleeApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = CE0B4E7225D52DCA00353CB8 /* Project object */;
 }
