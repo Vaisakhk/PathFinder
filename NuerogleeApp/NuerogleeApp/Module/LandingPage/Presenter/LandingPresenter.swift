@@ -50,13 +50,4 @@ extension LandingPresenter : LandingInteractorToPresenterProtocol {
         currentLevel = level
         totalScore = data
     }
-    
-    func scoreResultCompletedWithSuccess(data: Int, index: Int) {
-        
-    }
-    
-    func scoreResultCompletedWithError(errorString: String) {
-        
-    }
-
 }

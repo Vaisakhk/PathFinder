@@ -43,7 +43,6 @@ protocol HomePresenterToInteractorProtocol: BaseInteractorProtocol {
     func updateCurrentLevel(by value:Int)
     func gameHasBeenStarted()
     func gameHasBeenStopped()
-    func getGameScore()
     func startTimer()
     func restartTimer()
     func overlapped(movedConnection:ConnectionView,boxConnections: [BoxView], maxYValue:CGFloat)

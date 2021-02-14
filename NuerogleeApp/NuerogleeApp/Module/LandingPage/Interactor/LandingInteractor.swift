@@ -11,6 +11,9 @@ class LandingInteractor: LandingPresenterToInteractorProtocol {
     fileprivate var coreDataHandler  = CoreDataHandler.sharedInstance
     var presenter: LandingInteractorToPresenterProtocol?
     
+    /*
+     * Get Total Game Score, After getting the scrore informed to presenter
+     */
     func getGameScore() {
         let levelData:[Level] = coreDataHandler.getAllDatasWithPredicate(entity: "Level", predicate: nil, sortDescriptor: NSSortDescriptor(key: "level", ascending: true)) as? [Level] ?? []
       let totalScore =  levelData.reduce(0) { (sum, level) -> Int in
@@ -23,7 +26,6 @@ class LandingInteractor: LandingPresenterToInteractorProtocol {
                 levelValue = Int(tempLeaveData.level)
             }
         }
-        
         presenter?.scoreResultData(data: totalScore, level: levelValue)
     }
 }

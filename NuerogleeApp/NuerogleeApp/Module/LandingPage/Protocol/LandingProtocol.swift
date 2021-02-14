@@ -30,6 +30,4 @@ protocol LandingPresenterToInteractorProtocol: BaseInteractorProtocol {
 
 protocol LandingInteractorToPresenterProtocol: BaseInteractorToPresenterProtocol {
     func scoreResultData(data:Int, level:Int)
-    func scoreResultCompletedWithSuccess(data:Int,index:Int)
-    func scoreResultCompletedWithError(errorString:String)
 }

@@ -35,10 +35,6 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
         currentScore = 0
         timer.invalidate()
     }
-    //MARK:- Get total score
-    func getGameScore() {
-        
-    }
     
     //MARK:- Timer Functionality
     func startTimer() {
