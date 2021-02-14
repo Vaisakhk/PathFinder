@@ -42,12 +42,6 @@
                                 <color key="textColor" systemColor="systemPinkColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Rules" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Dc-HO-3Sc">
-                                <rect key="frame" x="20" y="798.5" width="374" height="23.5"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Level : 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcB-AL-fTG">
                                 <rect key="frame" x="20" y="194" width="374" height="29"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="21"/>
@@ -73,19 +67,34 @@
                                     <action selector="historyButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gwA-9S-0fr"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nOB-mK-6df">
+                                <rect key="frame" x="20" y="812" width="82" height="30"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="Game Rules">
+                                            <attributes>
+                                                <font key="NSFont" metaFont="system" size="15"/>
+                                                <integer key="NSUnderline" value="1"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="gameRuleButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EbX-Eu-l7F"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="nOB-mK-6df" secondAttribute="bottom" constant="20" id="C7F-At-xom"/>
                             <constraint firstItem="WcB-AL-fTG" firstAttribute="top" secondItem="X5q-od-YLa" secondAttribute="bottom" constant="15" id="ELb-FN-Zzh"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1Dc-HO-3Sc" secondAttribute="bottom" constant="40" id="MdA-rL-1FG"/>
+                            <constraint firstItem="nOB-mK-6df" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="I0c-Re-gZ1"/>
                             <constraint firstItem="X5q-od-YLa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="106" id="P0n-5X-CLj"/>
                             <constraint firstItem="WMz-9N-LND" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="SoN-fL-xId"/>
-                            <constraint firstItem="1Dc-HO-3Sc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="UsL-yV-roQ"/>
                             <constraint firstItem="X5q-od-YLa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Vco-ge-PbJ"/>
                             <constraint firstItem="WcB-AL-fTG" firstAttribute="leading" secondItem="X5q-od-YLa" secondAttribute="leading" id="Waz-fx-4pQ"/>
                             <constraint firstItem="IHo-6s-5Fg" firstAttribute="centerX" secondItem="WMz-9N-LND" secondAttribute="centerX" id="ayX-G1-p55"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1Dc-HO-3Sc" secondAttribute="trailing" constant="20" id="cip-Zp-bBm"/>
                             <constraint firstItem="WcB-AL-fTG" firstAttribute="trailing" secondItem="X5q-od-YLa" secondAttribute="trailing" id="io6-zU-54J"/>
                             <constraint firstItem="IHo-6s-5Fg" firstAttribute="top" secondItem="WMz-9N-LND" secondAttribute="bottom" constant="60" id="q1S-eA-m3s"/>
                             <constraint firstItem="WMz-9N-LND" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="tlJ-Nz-ctr"/>
@@ -93,7 +102,6 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="gameRuleLabel" destination="1Dc-HO-3Sc" id="mxW-Sw-d0S"/>
                         <outlet property="levelLabel" destination="WcB-AL-fTG" id="AVc-IP-rqE"/>
                         <outlet property="scoreLabel" destination="X5q-od-YLa" id="sYw-3v-jHg"/>
                     </connections>

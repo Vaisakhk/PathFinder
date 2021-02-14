@@ -42,6 +42,10 @@ class LandingPresenter: LandingViewToPresenterProtocol {
     func showHistory() {
         _router?.pushToHistoryScreen()
     }
+    func showGameRules() {
+        let message = "Once game started all the Boxes in the screen represent users, and all the covid connections will be represented by lines, and numbers will also display in the box to indicate the order of contact tracing.\n After 5 seconds Numbers will be dissappear from the Box, and numbers will be displayed on bottom of the screen.\nUsers need to place(drag and drop) each number correctly in the box. Each positive move have 1 point and each negative move have -1 point"
+        _router?.showAlertPopup(with:message, title:  "Game Rules", successButtonTitle: AlertConstants.closeButtonTitle)
+    }
 }
 
 //MARK:- Interactor to presenter Protocols

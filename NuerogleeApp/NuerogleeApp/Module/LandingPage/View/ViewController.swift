@@ -9,10 +9,9 @@ import UIKit
 
 class ViewController: UIViewController {
     var presenter: LandingViewToPresenterProtocol?
-    @IBOutlet weak var gameRuleLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
-    
     @IBOutlet weak var levelLabel: UILabel!
+    
     //MARK:- UIView Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +29,9 @@ class ViewController: UIViewController {
         presenter?.showHistory()
     }
     
+    @IBAction func gameRuleButtonAction(_ sender: Any) {
+        presenter?.showGameRules()
+    }
 }
 
 

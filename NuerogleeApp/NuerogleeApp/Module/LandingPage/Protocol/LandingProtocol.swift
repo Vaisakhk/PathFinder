@@ -12,6 +12,7 @@ protocol LandingViewToPresenterProtocol: BasePresenterProtocal{
     var currentLevel:Int?{ get }
     func startGame()
     func showHistory()
+    func showGameRules()
 }
 
 protocol LandingPresenterToViewProtocol: BaseViewProtocol{
