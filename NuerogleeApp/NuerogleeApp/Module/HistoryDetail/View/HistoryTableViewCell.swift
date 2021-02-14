@@ -24,7 +24,7 @@ class HistoryTableViewCell: UITableViewCell {
     }
     
     func populateData(score:Score) {
-        dateLabel.text = score.date ?? ""
+        //dateLabel.text = score.date ?? ""
         timeTakenLabel.text = "\(score.time )"
         scoreLabel.text = "\(score.score )"
         statusLabel.text = (score.isPositiveMove ? "Success" : "Failure")

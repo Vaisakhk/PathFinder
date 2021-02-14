@@ -23,6 +23,7 @@ class HistoryViewController: UIViewController {
     
     //MARK:- UIView Customization
     func customizeUI() {
+        self.title = "History"
         historyTableView.estimatedRowHeight = 150
         historyTableView.rowHeight = UITableView.automaticDimension
         historyTableView.register(UINib(nibName: "HistoryHomeCell", bundle: nil), forCellReuseIdentifier: "cell")

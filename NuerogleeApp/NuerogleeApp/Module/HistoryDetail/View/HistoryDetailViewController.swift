@@ -39,7 +39,7 @@ class HistoryDetailViewController: UIViewController {
 
 extension HistoryDetailViewController : HistoryDetailPresenterToViewProtocol {
     func refreshView() {
-        congratsLabel.text = "Congrats You Have Finished Level " + "\(presenter?.currentLevel?.level ?? 0)" + "\nYor Score " + "\(presenter?.currentLevel?.score ?? 0)"
+        congratsLabel.text = "Congrats You Have Finished Level " + "\(presenter?.currentLevel?.level ?? 0)" + "\nYour Score " + "\(presenter?.currentLevel?.score ?? 0)"
 //        levelLabel.text = "Level : " + "\(presenter?.currentLevel?.level ?? 0)"
 //        scoreLabel.text = "Score : " + "\(presenter?.currentLevel?.score ?? 0)"
         historyTableView.reloadData()
