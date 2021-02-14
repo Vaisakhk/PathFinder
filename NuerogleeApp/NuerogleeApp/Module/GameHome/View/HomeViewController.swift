@@ -65,7 +65,7 @@ class HomeViewController: UIViewController {
     
     func place(_ connection: UIView,_ index:Int) {
         var randomX = CGFloat.random(in: 50...view.bounds.maxX - 50)//boxX[index].x//
-        var randomY = CGFloat.random(in: 150...view.bounds.maxY - 200) //boxX[index].y//
+        var randomY = CGFloat.random(in: 160...view.bounds.maxY - 200) //boxX[index].y//
         let filterResult = presenter?.boxConnections!.filter { (tempView) -> Bool in
             let tempViewCenter = tempView.center
             if((randomX+50>tempViewCenter.x && randomX-50<tempViewCenter.x) &&

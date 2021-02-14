@@ -224,8 +224,8 @@
 		CE1F628525D909EC00C7154A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				CE1F628625D909EC00C7154A /* HomeViewController.xib */,
 				CE1F628725D909EC00C7154A /* HomeViewController.swift */,
+				CE1F628625D909EC00C7154A /* HomeViewController.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";

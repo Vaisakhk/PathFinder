@@ -85,7 +85,7 @@ class HomePresenter: HomeViewToPresenterProtocol {
         userConnections?.removeAll()
         let currentLevel = _interactor?.currentLevel ?? 0
         for i in 1...(currentLevel + 4 > 6 ? 6 : currentLevel + 4) {
-            let boxConnection = BoxView(frame: CGRect(origin: .zero, size: CGSize(width: 80, height: 80)))
+            let boxConnection = BoxView(frame: CGRect(origin: .zero, size: CGSize(width: 60, height: 60)))
             boxConnection.tag = i
             boxConnections?.append(boxConnection)
         }
