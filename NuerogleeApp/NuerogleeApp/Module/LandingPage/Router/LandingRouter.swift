@@ -26,10 +26,19 @@ final class LandingRouter: BaseRouter {
         viewController.presentRouter(HomeRouter(), presentationStyle: .fullScreen)
         //navigationController?.pushRouter(HomeRouter())
     }
+    
+    private func navigateToHistoryScreen() {
+        viewController.presentRouter(HistoryRouter(), presentationStyle: .fullScreen)
+        //navigationController?.pushRouter(HomeRouter())
+    }
 }
 
 //MARK:- Landing Presenter To Router Protocol
 extension LandingRouter: LandingPresenterToRouterProtocol {
+    func pushToHistoryScreen() {
+        navigateToHistoryScreen()
+    }
+    
     func pushToGameScreen() {
         navigateToGameScreen()
     }

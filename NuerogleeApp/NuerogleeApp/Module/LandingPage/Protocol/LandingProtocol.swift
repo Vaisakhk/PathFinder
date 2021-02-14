@@ -11,6 +11,7 @@ protocol LandingViewToPresenterProtocol: BasePresenterProtocal{
     var totalScore:Int?{ get }
     var currentLevel:Int?{ get }
     func startGame()
+    func showHistory()
 }
 
 protocol LandingPresenterToViewProtocol: BaseViewProtocol{
@@ -19,6 +20,7 @@ protocol LandingPresenterToViewProtocol: BaseViewProtocol{
 
 protocol LandingPresenterToRouterProtocol: RouterProtocal {
     func pushToGameScreen()
+    func pushToHistoryScreen()
 }
 
 protocol LandingPresenterToInteractorProtocol: BaseInteractorProtocol {

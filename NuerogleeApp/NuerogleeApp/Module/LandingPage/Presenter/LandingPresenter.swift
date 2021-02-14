@@ -39,6 +39,9 @@ class LandingPresenter: LandingViewToPresenterProtocol {
     func startGame() {
         _router?.pushToGameScreen()
     }
+    func showHistory() {
+        _router?.pushToHistoryScreen()
+    }
 }
 
 //MARK:- Interactor to presenter Protocols

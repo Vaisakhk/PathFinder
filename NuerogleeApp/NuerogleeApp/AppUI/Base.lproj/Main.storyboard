@@ -49,24 +49,45 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Level : 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcB-AL-fTG">
-                                <rect key="frame" x="20" y="209" width="374" height="29"/>
+                                <rect key="frame" x="20" y="194" width="374" height="29"/>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="21"/>
                                 <color key="textColor" systemColor="systemPinkColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IHo-6s-5Fg">
+                                <rect key="frame" x="145.5" y="536.5" width="123" height="47"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="mo7-xd-FAA"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="123" id="zud-LX-daU"/>
+                                </constraints>
+                                <state key="normal" title="History">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="self.layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="historyButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gwA-9S-0fr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="WcB-AL-fTG" firstAttribute="top" secondItem="X5q-od-YLa" secondAttribute="bottom" constant="30" id="ELb-FN-Zzh"/>
+                            <constraint firstItem="WcB-AL-fTG" firstAttribute="top" secondItem="X5q-od-YLa" secondAttribute="bottom" constant="15" id="ELb-FN-Zzh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1Dc-HO-3Sc" secondAttribute="bottom" constant="40" id="MdA-rL-1FG"/>
                             <constraint firstItem="X5q-od-YLa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="106" id="P0n-5X-CLj"/>
                             <constraint firstItem="WMz-9N-LND" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="SoN-fL-xId"/>
                             <constraint firstItem="1Dc-HO-3Sc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="UsL-yV-roQ"/>
                             <constraint firstItem="X5q-od-YLa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Vco-ge-PbJ"/>
                             <constraint firstItem="WcB-AL-fTG" firstAttribute="leading" secondItem="X5q-od-YLa" secondAttribute="leading" id="Waz-fx-4pQ"/>
+                            <constraint firstItem="IHo-6s-5Fg" firstAttribute="centerX" secondItem="WMz-9N-LND" secondAttribute="centerX" id="ayX-G1-p55"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1Dc-HO-3Sc" secondAttribute="trailing" constant="20" id="cip-Zp-bBm"/>
                             <constraint firstItem="WcB-AL-fTG" firstAttribute="trailing" secondItem="X5q-od-YLa" secondAttribute="trailing" id="io6-zU-54J"/>
+                            <constraint firstItem="IHo-6s-5Fg" firstAttribute="top" secondItem="WMz-9N-LND" secondAttribute="bottom" constant="60" id="q1S-eA-m3s"/>
                             <constraint firstItem="WMz-9N-LND" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="tlJ-Nz-ctr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="X5q-od-YLa" secondAttribute="trailing" constant="20" id="vm6-hR-MwR"/>
                         </constraints>

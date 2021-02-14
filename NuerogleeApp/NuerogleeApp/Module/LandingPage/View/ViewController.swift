@@ -26,6 +26,9 @@ class ViewController: UIViewController {
     @IBAction func startButtonAction(_ sender: Any) {
         presenter?.startGame()
     }
+    @IBAction func historyButtonAction(_ sender: Any) {
+        presenter?.showHistory()
+    }
     
 }
 

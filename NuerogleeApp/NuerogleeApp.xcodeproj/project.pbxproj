@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		CE1F625925D8BF4400C7154A /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F625725D8BF4400C7154A /* HistoryTableViewCell.swift */; };
 		CE1F625A25D8BF4400C7154A /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1F625825D8BF4400C7154A /* HistoryTableViewCell.xib */; };
+		CE1F626A25D8E97A00C7154A /* HistoryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F625E25D8E97A00C7154A /* HistoryPresenter.swift */; };
+		CE1F626B25D8E97A00C7154A /* HistoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F626025D8E97A00C7154A /* HistoryProtocol.swift */; };
+		CE1F626D25D8E97A00C7154A /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F626325D8E97A00C7154A /* HistoryViewController.swift */; };
+		CE1F626E25D8E97A00C7154A /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1F626425D8E97A00C7154A /* HistoryViewController.xib */; };
+		CE1F627025D8E97A00C7154A /* HistoryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F626725D8E97A00C7154A /* HistoryInteractor.swift */; };
+		CE1F627125D8E97A00C7154A /* HistoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F626925D8E97A00C7154A /* HistoryRouter.swift */; };
+		CE1F627A25D8F43500C7154A /* HistoryHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F627825D8F43500C7154A /* HistoryHomeCell.swift */; };
+		CE1F627B25D8F43500C7154A /* HistoryHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1F627925D8F43500C7154A /* HistoryHomeCell.xib */; };
 		CE42DCEE25D8B72A0096CEF5 /* HistoryDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42DCE425D8B72A0096CEF5 /* HistoryDetailPresenter.swift */; };
 		CE42DCEF25D8B72A0096CEF5 /* HistoryDetailProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42DCE625D8B72A0096CEF5 /* HistoryDetailProtocol.swift */; };
 		CE42DCF025D8B72A0096CEF5 /* HistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42DCE825D8B72A0096CEF5 /* HistoryDetailViewController.swift */; };
@@ -48,6 +56,14 @@
 		CE0B4E8B25D52DCD00353CB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE1F625725D8BF4400C7154A /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
 		CE1F625825D8BF4400C7154A /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
+		CE1F625E25D8E97A00C7154A /* HistoryPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryPresenter.swift; sourceTree = "<group>"; };
+		CE1F626025D8E97A00C7154A /* HistoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryProtocol.swift; sourceTree = "<group>"; };
+		CE1F626325D8E97A00C7154A /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		CE1F626425D8E97A00C7154A /* HistoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
+		CE1F626725D8E97A00C7154A /* HistoryInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryInteractor.swift; sourceTree = "<group>"; };
+		CE1F626925D8E97A00C7154A /* HistoryRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryRouter.swift; sourceTree = "<group>"; };
+		CE1F627825D8F43500C7154A /* HistoryHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryHomeCell.swift; sourceTree = "<group>"; };
+		CE1F627925D8F43500C7154A /* HistoryHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryHomeCell.xib; sourceTree = "<group>"; };
 		CE42DCE425D8B72A0096CEF5 /* HistoryDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDetailPresenter.swift; sourceTree = "<group>"; };
 		CE42DCE625D8B72A0096CEF5 /* HistoryDetailProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDetailProtocol.swift; sourceTree = "<group>"; };
 		CE42DCE825D8B72A0096CEF5 /* HistoryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDetailViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +136,61 @@
 				CE0B4E8B25D52DCD00353CB8 /* Info.plist */,
 			);
 			path = NuerogleeApp;
+			sourceTree = "<group>";
+		};
+		CE1F625C25D8E97A00C7154A /* History */ = {
+			isa = PBXGroup;
+			children = (
+				CE1F625D25D8E97A00C7154A /* Presenter */,
+				CE1F625F25D8E97A00C7154A /* Protocol */,
+				CE1F626125D8E97A00C7154A /* View */,
+				CE1F626625D8E97A00C7154A /* Interactor */,
+				CE1F626825D8E97A00C7154A /* Router */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		CE1F625D25D8E97A00C7154A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CE1F625E25D8E97A00C7154A /* HistoryPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		CE1F625F25D8E97A00C7154A /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				CE1F626025D8E97A00C7154A /* HistoryProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		CE1F626125D8E97A00C7154A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE1F626325D8E97A00C7154A /* HistoryViewController.swift */,
+				CE1F626425D8E97A00C7154A /* HistoryViewController.xib */,
+				CE1F627825D8F43500C7154A /* HistoryHomeCell.swift */,
+				CE1F627925D8F43500C7154A /* HistoryHomeCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE1F626625D8E97A00C7154A /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				CE1F626725D8E97A00C7154A /* HistoryInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		CE1F626825D8E97A00C7154A /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				CE1F626925D8E97A00C7154A /* HistoryRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		CE42DCE225D8B72A0096CEF5 /* HistoryDetail */ = {
@@ -198,6 +269,7 @@
 		CEECCA2B25D7528B00823D37 /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				CE1F625C25D8E97A00C7154A /* History */,
 				CEECCA3625D7528B00823D37 /* LandingPage */,
 				CEECCA2C25D7528B00823D37 /* Home */,
 				CE42DCE225D8B72A0096CEF5 /* HistoryDetail */,
@@ -411,7 +483,9 @@
 				CEECCA4425D7528B00823D37 /* Main.storyboard in Resources */,
 				CEECCA4225D7528B00823D37 /* Assets.xcassets in Resources */,
 				CE42DCF125D8B72A0096CEF5 /* HistoryDetailViewController.xib in Resources */,
+				CE1F626E25D8E97A00C7154A /* HistoryViewController.xib in Resources */,
 				CEECCA4325D7528B00823D37 /* LaunchScreen.storyboard in Resources */,
+				CE1F627B25D8F43500C7154A /* HistoryHomeCell.xib in Resources */,
 				CE1F625A25D8BF4400C7154A /* HistoryTableViewCell.xib in Resources */,
 				CEECCA5725D7547A00823D37 /* HomeViewController.xib in Resources */,
 			);
@@ -424,18 +498,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE1F626D25D8E97A00C7154A /* HistoryViewController.swift in Sources */,
 				CEECCA4725D7528B00823D37 /* BoxView.swift in Sources */,
 				CE9B645525D811B1001E0F37 /* Constants.swift in Sources */,
 				CE1F625925D8BF4400C7154A /* HistoryTableViewCell.swift in Sources */,
+				CE1F627125D8E97A00C7154A /* HistoryRouter.swift in Sources */,
+				CE1F627A25D8F43500C7154A /* HistoryHomeCell.swift in Sources */,
 				CE42DCEE25D8B72A0096CEF5 /* HistoryDetailPresenter.swift in Sources */,
 				CEECCA7A25D758E400823D37 /* HomeProtocol.swift in Sources */,
 				CEECCA7125D7565600823D37 /* CoreDataHandler.swift in Sources */,
+				CE1F626A25D8E97A00C7154A /* HistoryPresenter.swift in Sources */,
 				CEECCA4B25D7528B00823D37 /* BasePresenter.swift in Sources */,
 				CEECCA4C25D7528B00823D37 /* BaseRouter.swift in Sources */,
 				CE42DCF225D8B72A0096CEF5 /* HistoryDetailInteractor.swift in Sources */,
+				CE1F627025D8E97A00C7154A /* HistoryInteractor.swift in Sources */,
 				CEECCA6725D754F500823D37 /* LandingProtocol.swift in Sources */,
 				CEECCA6A25D7550700823D37 /* LandingPresenter.swift in Sources */,
 				CEECCA6D25D7552A00823D37 /* LandingInteractor.swift in Sources */,
+				CE1F626B25D8E97A00C7154A /* HistoryProtocol.swift in Sources */,
 				CEECCA4825D7528B00823D37 /* ConnectionView.swift in Sources */,
 				CEECCA7D25D758F000823D37 /* HomeRouter.swift in Sources */,
 				CEECCA6425D754E600823D37 /* LandingRouter.swift in Sources */,
