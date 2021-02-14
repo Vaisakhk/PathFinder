@@ -20,6 +20,7 @@
      - Game follows level concept once user complete first level then moves to next level. If the user clicks back button or close the app current lavel(last uncomplete level) will restart
      
 ### Approach
+     - Used Touch deletages to drag and drop the views
      - Using Core Data for the local storage
      - Created 2 entities one for Levels and one for Saving Score on each user move.
      - Created One to Many relationship from "Level" to "Scores".

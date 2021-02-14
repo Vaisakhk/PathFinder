@@ -32,6 +32,7 @@ class HistoryPresenter: HistoryViewToPresenterProtocol {
         _interactor?.getAllLevels()
     }
     
+    //MARK:- Navigation
     func moveToParentView() {
         _router?.dissmissView()
     }

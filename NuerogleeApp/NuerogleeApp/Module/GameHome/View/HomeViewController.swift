@@ -10,7 +10,6 @@ import UIKit
 class HomeViewController: UIViewController {
     var presenter: HomeViewToPresenterProtocol?
     
-    var boxX = [CGPoint]()
     let renderedLines = UIImageView()
     
     @IBOutlet weak var timeLabel: UILabel!
@@ -24,16 +23,6 @@ class HomeViewController: UIViewController {
 
         renderedLines.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(renderedLines)
-        
-        let maximumXValue = view.bounds.maxY/6
-        let maximumYValue = view.bounds.maxY/6
-        
-        boxX.append(CGPoint(x: maximumXValue,y: maximumYValue))
-        boxX.append(CGPoint(x: maximumXValue*2,y: maximumYValue*3))
-        boxX.append(CGPoint(x: maximumXValue*4,y: maximumYValue*4))
-        boxX.append(CGPoint(x: maximumXValue*5,y: maximumYValue*5))
-        boxX.append(CGPoint(x: maximumXValue*3,y: maximumYValue*4))
-        boxX.append(CGPoint(x: maximumXValue*4,y: maximumYValue*2))
         
         NSLayoutConstraint.activate([
             renderedLines.topAnchor.constraint(equalTo: view.topAnchor),
@@ -83,6 +72,9 @@ class HomeViewController: UIViewController {
         view.addSubview(connection)
     }
     
+    /*
+     * Redraw the entire Lines between box
+     */
     func redrawLines() {
         let renderer = UIGraphicsImageRenderer(bounds: view.bounds)
 

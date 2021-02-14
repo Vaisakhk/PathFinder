@@ -25,11 +25,17 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
     }
     
     //MARK:- Game Start informed to Interactor
+    /*
+     * Game Start informed to Interactor
+     */
     func gameHasBeenStarted() {
         currentLevel = getLastLevelPlayed()
         saveCurrentGameLevel()
     }
     
+    /*
+     * Game Stoped informed to Interactor
+     */
     func gameHasBeenStopped() {
         currentLevel = 0
         currentScore = 0
@@ -61,7 +67,15 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
         return String(format:"%02i:%02i:%02i", hours, minutes, seconds)
     }
     
-    //MARK:- Check whether user placed circle correctly in Box
+    /*
+     * Check whether Box and circles are overlapped
+     *      Parameters :
+     *        movedConnection: Dragged circle
+     *        boxConnections : List of Box views displaying in UI
+     *        maxYValue      : Maximum y value of the screen
+     *      Returns :
+     *        Result directly passed to presenter
+     */
     func overlapped(movedConnection:ConnectionView,boxConnections: [BoxView], maxYValue:CGFloat) {
         for connection in boxConnections {
             if((movedConnection.frame.origin.x>=connection.frame.origin.x && movedConnection.frame.origin.x <= connection.frame.origin.x + connection.frame.width) && movedConnection.frame.origin.y>=connection.frame.origin.y && movedConnection.frame.origin.y <= connection.frame.origin.y + connection.frame.height) {
@@ -108,7 +122,13 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
         }
     }
     
-    //MARK:- Check User moved all the boxes correctly
+    /*
+     * Check User moved all the boxes correctly
+     *      Parameters :
+     *        boxConnections : List of Box views displaying in UI
+     *      Returns :
+     *        Bool           : indicating whether user droped all numbers inside the box
+     */
     func levelClear(boxConnections: [BoxView]) -> Bool {
         let isFinished = boxConnections.filter { (box) -> Bool in
             box.connectedUser != nil
@@ -117,6 +137,13 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
         return isFinished
     }
     
+    /*
+     * Check User moved all the boxes correctly and whether need to move to next game
+     *      Parameters :
+     *        boxConnections : List of Box views displaying in UI
+     *      Return     :
+     *        Result directly passed to presenter
+     */
     func isLevelClearForNextGame(boxConnections: [BoxView]) {
         let isFinished = boxConnections.filter { (box) -> Bool in
             box.connectedUser != nil
@@ -131,7 +158,11 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
     }
     
     
-    //MARK:- Change Current Level of the Game
+    /*
+     * To update current level if last level is finished, and save current score and level
+     *      Parameters :
+     *        value : Number to be incremented
+     */
     func updateCurrentLevel(by value:Int) {
         if(getLastLevelIsFinished()) {
             currentLevel! += value
@@ -140,28 +171,9 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
             presenter?.scoreResultCompletedWithSuccess(score: currentScore)
         }
     }
-    
-//    private func getFinishedMessage() ->String {
-//        var message = ""
-//        message = message + "Congratss Completed " + "\(currentLevel ?? 0)" + " Level\n"
-//        message = message + "Your Score is " + "\(currentLevelModel?.score ?? 0)" + "\n"
-//        message = message + "Total time Taken for this level " + timeString(time: TimeInterval(currentLevelModel?.timeTaken ?? 0))
-//        message = message + "\n Your Movements \n\n"
-//        if let scores:[Score] = currentLevelModel?.scores?.allObjects as? [Score] {
-//            var tempScore = scores
-//            tempScore.sort { (a, b) -> Bool in
-//                a.date! < b.date!
-//            }
-//            for score in tempScore {
-//                message = message + "Date "+(score.date ?? "") + "\n"
-//                message = message + "Time Taken "+"\(score.time )" + "\n"
-//                message = message + "score "+"\(score.score )" + "\n"
-//                message = message + (score.isPositiveMove ? " This Move is Success" : "This Move is Failure") + "\n"
-//            }
-//        }
-//        return message
-//    }
-    
+    /*
+     * TO save current Game Level
+     */
     private func saveCurrentGameLevel() {
         let levelData:[Level] = coreDataHandler.getAllDatasWithPredicate(entity: "Level", predicate: NSPredicate(format: "(level ==  %@)", "\(currentLevel ?? 0)"), sortDescriptor: NSSortDescriptor(key: "level", ascending: true)) as? [Level] ?? []
         var level = levelData.first
@@ -180,6 +192,9 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
         coreDataHandler.saveContext()
     }
     
+    /*
+     * TO save current score for each move under current level
+     */
     private func saveCurrentGameScore(isPositive:Bool, scoreValue:Int) {
         let score  = coreDataHandler.newEntityForName(entityName: "Score") as? Score
         score?.currentLevel = currentLevelModel
@@ -196,6 +211,11 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
         previousMoveTime = seconds
     }
     
+    /*
+     * To Get last level playes
+     *     Returns :
+     *         Int    : returns last level unique number
+     */
     private func getLastLevelPlayed() -> Int {
         let levelData:[Level] = coreDataHandler.getAllDatasWithPredicate(entity: "Level", predicate: nil, sortDescriptor: NSSortDescriptor(key: "level", ascending: true)) as? [Level] ?? []
         var levelValue = 1
@@ -208,6 +228,11 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
         return levelValue
     }
     
+    /*
+     * To Check whether last level is finished or not
+     *     Returns :
+     *          Bool     : indicating last level is finished or not
+     */
     private func getLastLevelIsFinished() -> Bool {
         let levelData:[Level] = coreDataHandler.getAllDatasWithPredicate(entity: "Level", predicate: nil, sortDescriptor: NSSortDescriptor(key: "level", ascending: true)) as? [Level] ?? []
         var isFinished = false

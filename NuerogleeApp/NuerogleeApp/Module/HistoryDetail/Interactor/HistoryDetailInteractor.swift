@@ -12,6 +12,13 @@ class HistoryDetailInteractor: HistoryDetailPresenterToInteractorProtocol {
     fileprivate var coreDataHandler  = CoreDataHandler.sharedInstance
     var presenter: HistoryDetailInteractorToPresenterProtocol?
     
+    /*
+     * Get all Scores for the current level
+     *     Parameters :
+     *          level    : Current Level that user playing currently
+     *     Return     :
+     *          Result returns to presenter
+     */
     func getScores(from level:Level?) {
         var finalScore:[Score] = []
         if let tempLevel = level {
