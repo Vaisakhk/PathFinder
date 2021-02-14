@@ -17,6 +17,12 @@
 		CE1F627125D8E97A00C7154A /* HistoryRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F626925D8E97A00C7154A /* HistoryRouter.swift */; };
 		CE1F627A25D8F43500C7154A /* HistoryHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F627825D8F43500C7154A /* HistoryHomeCell.swift */; };
 		CE1F627B25D8F43500C7154A /* HistoryHomeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1F627925D8F43500C7154A /* HistoryHomeCell.xib */; };
+		CE1F628C25D909EC00C7154A /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F628225D909EC00C7154A /* HomePresenter.swift */; };
+		CE1F628D25D909EC00C7154A /* HomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F628425D909EC00C7154A /* HomeProtocol.swift */; };
+		CE1F628E25D909EC00C7154A /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1F628625D909EC00C7154A /* HomeViewController.xib */; };
+		CE1F628F25D909EC00C7154A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F628725D909EC00C7154A /* HomeViewController.swift */; };
+		CE1F629025D909EC00C7154A /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F628925D909EC00C7154A /* HomeInteractor.swift */; };
+		CE1F629125D909EC00C7154A /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F628B25D909EC00C7154A /* HomeRouter.swift */; };
 		CE42DCEE25D8B72A0096CEF5 /* HistoryDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42DCE425D8B72A0096CEF5 /* HistoryDetailPresenter.swift */; };
 		CE42DCEF25D8B72A0096CEF5 /* HistoryDetailProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42DCE625D8B72A0096CEF5 /* HistoryDetailProtocol.swift */; };
 		CE42DCF025D8B72A0096CEF5 /* HistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42DCE825D8B72A0096CEF5 /* HistoryDetailViewController.swift */; };
@@ -36,18 +42,12 @@
 		CEECCA4E25D7528B00823D37 /* BaseViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA3D25D7528B00823D37 /* BaseViewProtocol.swift */; };
 		CEECCA4F25D7528B00823D37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA3F25D7528B00823D37 /* AppDelegate.swift */; };
 		CEECCA5025D7528B00823D37 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA4025D7528B00823D37 /* SceneDelegate.swift */; };
-		CEECCA5725D7547A00823D37 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CEECCA5525D7547A00823D37 /* HomeViewController.xib */; };
-		CEECCA5825D7547A00823D37 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA5625D7547A00823D37 /* HomeViewController.swift */; };
 		CEECCA5F25D7548300823D37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA5E25D7548300823D37 /* ViewController.swift */; };
 		CEECCA6425D754E600823D37 /* LandingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA6325D754E600823D37 /* LandingRouter.swift */; };
 		CEECCA6725D754F500823D37 /* LandingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA6625D754F500823D37 /* LandingProtocol.swift */; };
 		CEECCA6A25D7550700823D37 /* LandingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA6925D7550700823D37 /* LandingPresenter.swift */; };
 		CEECCA6D25D7552A00823D37 /* LandingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA6C25D7552A00823D37 /* LandingInteractor.swift */; };
 		CEECCA7125D7565600823D37 /* CoreDataHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA7025D7565600823D37 /* CoreDataHandler.swift */; };
-		CEECCA7425D758CC00823D37 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA7325D758CC00823D37 /* HomeInteractor.swift */; };
-		CEECCA7725D758D900823D37 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA7625D758D900823D37 /* HomePresenter.swift */; };
-		CEECCA7A25D758E400823D37 /* HomeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA7925D758E400823D37 /* HomeProtocol.swift */; };
-		CEECCA7D25D758F000823D37 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA7C25D758F000823D37 /* HomeRouter.swift */; };
 		CEECCA8225D75CF200823D37 /* NuerogleeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA8025D75CF200823D37 /* NuerogleeApp.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +64,12 @@
 		CE1F626925D8E97A00C7154A /* HistoryRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryRouter.swift; sourceTree = "<group>"; };
 		CE1F627825D8F43500C7154A /* HistoryHomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryHomeCell.swift; sourceTree = "<group>"; };
 		CE1F627925D8F43500C7154A /* HistoryHomeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryHomeCell.xib; sourceTree = "<group>"; };
+		CE1F628225D909EC00C7154A /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
+		CE1F628425D909EC00C7154A /* HomeProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeProtocol.swift; sourceTree = "<group>"; };
+		CE1F628625D909EC00C7154A /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		CE1F628725D909EC00C7154A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		CE1F628925D909EC00C7154A /* HomeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
+		CE1F628B25D909EC00C7154A /* HomeRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		CE42DCE425D8B72A0096CEF5 /* HistoryDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDetailPresenter.swift; sourceTree = "<group>"; };
 		CE42DCE625D8B72A0096CEF5 /* HistoryDetailProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDetailProtocol.swift; sourceTree = "<group>"; };
 		CE42DCE825D8B72A0096CEF5 /* HistoryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDetailViewController.swift; sourceTree = "<group>"; };
@@ -83,18 +89,12 @@
 		CEECCA3D25D7528B00823D37 /* BaseViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewProtocol.swift; sourceTree = "<group>"; };
 		CEECCA3F25D7528B00823D37 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CEECCA4025D7528B00823D37 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CEECCA5525D7547A00823D37 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
-		CEECCA5625D7547A00823D37 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CEECCA5E25D7548300823D37 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CEECCA6325D754E600823D37 /* LandingRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingRouter.swift; sourceTree = "<group>"; };
 		CEECCA6625D754F500823D37 /* LandingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingProtocol.swift; sourceTree = "<group>"; };
 		CEECCA6925D7550700823D37 /* LandingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingPresenter.swift; sourceTree = "<group>"; };
 		CEECCA6C25D7552A00823D37 /* LandingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingInteractor.swift; sourceTree = "<group>"; };
 		CEECCA7025D7565600823D37 /* CoreDataHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataHandler.swift; sourceTree = "<group>"; };
-		CEECCA7325D758CC00823D37 /* HomeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
-		CEECCA7625D758D900823D37 /* HomePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
-		CEECCA7925D758E400823D37 /* HomeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProtocol.swift; sourceTree = "<group>"; };
-		CEECCA7C25D758F000823D37 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		CEECCA8125D75CF200823D37 /* NuerogleeApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NuerogleeApp.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -193,6 +193,59 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		CE1F628025D909EC00C7154A /* GameHome */ = {
+			isa = PBXGroup;
+			children = (
+				CE1F628125D909EC00C7154A /* Presenter */,
+				CE1F628325D909EC00C7154A /* Protocol */,
+				CE1F628525D909EC00C7154A /* View */,
+				CE1F628825D909EC00C7154A /* Interactor */,
+				CE1F628A25D909EC00C7154A /* Router */,
+			);
+			path = GameHome;
+			sourceTree = "<group>";
+		};
+		CE1F628125D909EC00C7154A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CE1F628225D909EC00C7154A /* HomePresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		CE1F628325D909EC00C7154A /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				CE1F628425D909EC00C7154A /* HomeProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		CE1F628525D909EC00C7154A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE1F628625D909EC00C7154A /* HomeViewController.xib */,
+				CE1F628725D909EC00C7154A /* HomeViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE1F628825D909EC00C7154A /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				CE1F628925D909EC00C7154A /* HomeInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		CE1F628A25D909EC00C7154A /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				CE1F628B25D909EC00C7154A /* HomeRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		CE42DCE225D8B72A0096CEF5 /* HistoryDetail */ = {
 			isa = PBXGroup;
 			children = (
@@ -270,49 +323,13 @@
 			isa = PBXGroup;
 			children = (
 				CEECCA3625D7528B00823D37 /* LandingPage */,
-				CEECCA2C25D7528B00823D37 /* Home */,
+				CE1F628025D909EC00C7154A /* GameHome */,
 				CE1F625C25D8E97A00C7154A /* History */,
 				CE42DCE225D8B72A0096CEF5 /* HistoryDetail */,
 				CEECCA3325D7528B00823D37 /* CustomView */,
 				CEECCA3825D7528B00823D37 /* Base */,
 			);
 			path = Module;
-			sourceTree = "<group>";
-		};
-		CEECCA2C25D7528B00823D37 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				CEECCA5425D7547A00823D37 /* View */,
-				CEECCA3125D7528B00823D37 /* Interactor */,
-				CEECCA2D25D7528B00823D37 /* Presenter */,
-				CEECCA6125D754AC00823D37 /* Protocol */,
-				CEECCA3225D7528B00823D37 /* Router */,
-			);
-			path = Home;
-			sourceTree = "<group>";
-		};
-		CEECCA2D25D7528B00823D37 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				CEECCA7625D758D900823D37 /* HomePresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		CEECCA3125D7528B00823D37 /* Interactor */ = {
-			isa = PBXGroup;
-			children = (
-				CEECCA7325D758CC00823D37 /* HomeInteractor.swift */,
-			);
-			path = Interactor;
-			sourceTree = "<group>";
-		};
-		CEECCA3225D7528B00823D37 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				CEECCA7C25D758F000823D37 /* HomeRouter.swift */,
-			);
-			path = Router;
 			sourceTree = "<group>";
 		};
 		CEECCA3325D7528B00823D37 /* CustomView */ = {
@@ -366,15 +383,6 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
-		CEECCA5425D7547A00823D37 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				CEECCA5625D7547A00823D37 /* HomeViewController.swift */,
-				CEECCA5525D7547A00823D37 /* HomeViewController.xib */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		CEECCA5A25D7548300823D37 /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -405,14 +413,6 @@
 				CEECCA5E25D7548300823D37 /* ViewController.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		CEECCA6125D754AC00823D37 /* Protocol */ = {
-			isa = PBXGroup;
-			children = (
-				CEECCA7925D758E400823D37 /* HomeProtocol.swift */,
-			);
-			path = Protocol;
 			sourceTree = "<group>";
 		};
 		CEECCA6225D754B300823D37 /* Protocol */ = {
@@ -487,7 +487,7 @@
 				CEECCA4325D7528B00823D37 /* LaunchScreen.storyboard in Resources */,
 				CE1F627B25D8F43500C7154A /* HistoryHomeCell.xib in Resources */,
 				CE1F625A25D8BF4400C7154A /* HistoryTableViewCell.xib in Resources */,
-				CEECCA5725D7547A00823D37 /* HomeViewController.xib in Resources */,
+				CE1F628E25D909EC00C7154A /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,14 +501,16 @@
 				CE1F626D25D8E97A00C7154A /* HistoryViewController.swift in Sources */,
 				CEECCA4725D7528B00823D37 /* BoxView.swift in Sources */,
 				CE9B645525D811B1001E0F37 /* Constants.swift in Sources */,
+				CE1F628D25D909EC00C7154A /* HomeProtocol.swift in Sources */,
+				CE1F628C25D909EC00C7154A /* HomePresenter.swift in Sources */,
 				CE1F625925D8BF4400C7154A /* HistoryTableViewCell.swift in Sources */,
 				CE1F627125D8E97A00C7154A /* HistoryRouter.swift in Sources */,
 				CE1F627A25D8F43500C7154A /* HistoryHomeCell.swift in Sources */,
 				CE42DCEE25D8B72A0096CEF5 /* HistoryDetailPresenter.swift in Sources */,
-				CEECCA7A25D758E400823D37 /* HomeProtocol.swift in Sources */,
 				CEECCA7125D7565600823D37 /* CoreDataHandler.swift in Sources */,
 				CE1F626A25D8E97A00C7154A /* HistoryPresenter.swift in Sources */,
 				CEECCA4B25D7528B00823D37 /* BasePresenter.swift in Sources */,
+				CE1F629025D909EC00C7154A /* HomeInteractor.swift in Sources */,
 				CEECCA4C25D7528B00823D37 /* BaseRouter.swift in Sources */,
 				CE42DCF225D8B72A0096CEF5 /* HistoryDetailInteractor.swift in Sources */,
 				CE1F627025D8E97A00C7154A /* HistoryInteractor.swift in Sources */,
@@ -517,21 +519,19 @@
 				CEECCA6D25D7552A00823D37 /* LandingInteractor.swift in Sources */,
 				CE1F626B25D8E97A00C7154A /* HistoryProtocol.swift in Sources */,
 				CEECCA4825D7528B00823D37 /* ConnectionView.swift in Sources */,
-				CEECCA7D25D758F000823D37 /* HomeRouter.swift in Sources */,
 				CEECCA6425D754E600823D37 /* LandingRouter.swift in Sources */,
 				CEECCA5F25D7548300823D37 /* ViewController.swift in Sources */,
 				CEECCA4E25D7528B00823D37 /* BaseViewProtocol.swift in Sources */,
 				CE42DCF025D8B72A0096CEF5 /* HistoryDetailViewController.swift in Sources */,
-				CEECCA5825D7547A00823D37 /* HomeViewController.swift in Sources */,
+				CE1F629125D909EC00C7154A /* HomeRouter.swift in Sources */,
 				CE42DCEF25D8B72A0096CEF5 /* HistoryDetailProtocol.swift in Sources */,
 				CEECCA5025D7528B00823D37 /* SceneDelegate.swift in Sources */,
 				CEECCA4A25D7528B00823D37 /* BaseInteractorToPresenterProtocol.swift in Sources */,
+				CE1F628F25D909EC00C7154A /* HomeViewController.swift in Sources */,
 				CEECCA4F25D7528B00823D37 /* AppDelegate.swift in Sources */,
 				CEECCA8225D75CF200823D37 /* NuerogleeApp.xcdatamodeld in Sources */,
-				CEECCA7725D758D900823D37 /* HomePresenter.swift in Sources */,
 				CEECCA4D25D7528B00823D37 /* BaseInteractorProtocol.swift in Sources */,
 				CE42DCF325D8B72A0096CEF5 /* HistoryDetailRouter.swift in Sources */,
-				CEECCA7425D758CC00823D37 /* HomeInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

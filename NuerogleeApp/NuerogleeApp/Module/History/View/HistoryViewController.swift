@@ -12,6 +12,7 @@ class HistoryViewController: UIViewController {
     @IBOutlet weak var historyTableView: UITableView!
     var presenter: HistoryViewToPresenterProtocol?
     
+    @IBOutlet weak var noDataLabel: UILabel!
     @IBOutlet weak var congratsLabel: UILabel!
     //MARK:- UIView Life Cycle
     override func viewDidLoad() {
@@ -50,6 +51,11 @@ class HistoryViewController: UIViewController {
 
 extension HistoryViewController : HistoryPresenterToViewProtocol {
     func refreshView() {
+        if(presenter?.levels?.count == 0) {
+            noDataLabel.isHidden = false
+        }else {
+            noDataLabel.isHidden = true
+        }
         historyTableView.reloadData()
     }
 }

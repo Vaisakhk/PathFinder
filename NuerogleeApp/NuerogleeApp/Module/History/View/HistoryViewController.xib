@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HistoryViewController" customModule="NuerogleeApp" customModuleProvider="target">
             <connections>
                 <outlet property="historyTableView" destination="xve-wF-LmA" id="9iS-7F-ASp"/>
+                <outlet property="noDataLabel" destination="Jpt-XT-KS3" id="Xxf-Gb-faJ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,10 +29,20 @@
                         <outlet property="delegate" destination="-1" id="hcY-tz-1Ud"/>
                     </connections>
                 </tableView>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi You didnt played any game, Please play some game and comeback" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jpt-XT-KS3">
+                    <rect key="frame" x="20" y="430" width="374" height="46.5"/>
+                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="Jpt-XT-KS3" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="DTz-In-zUe"/>
+                <constraint firstItem="Jpt-XT-KS3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="NOb-O3-pxr"/>
+                <constraint firstItem="Jpt-XT-KS3" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="NRZ-92-PO4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Jpt-XT-KS3" secondAttribute="trailing" constant="20" id="VP2-qL-YQj"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="xve-wF-LmA" secondAttribute="bottom" id="h4B-Cs-rTu"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xve-wF-LmA" secondAttribute="trailing" id="osh-TO-Vtx"/>
                 <constraint firstItem="xve-wF-LmA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wFk-Bd-Pil"/>
