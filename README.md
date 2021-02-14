@@ -6,8 +6,10 @@
 ### Requirements
      - iOS 13.0 and above
      - Xcode Version 12.2
+     - Only support iPad and iPhone Portrait mode 
      
 ### Assemptions
+     - Assuming application only support Portrait mode
      - Assuming each Boxes on the screen represent users and all the covid connections will be represented by lines
      - Assuming all the numbers on the box indicates the order of contact tracing
      - Assuming upto 5 seconds after game start user can't do anything
