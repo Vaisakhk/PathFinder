@@ -16,6 +16,14 @@ class LandingInteractor: LandingPresenterToInteractorProtocol {
       let totalScore =  levelData.reduce(0) { (sum, level) -> Int in
             sum + Int(level.score)
         }
-        presenter?.scoreResultData(data: totalScore)
+        
+        var levelValue = 0
+        if levelData.count != 0 {
+            if let tempLeaveData = levelData.last {
+                levelValue = Int(tempLeaveData.level)
+            }
+        }
+        
+        presenter?.scoreResultData(data: totalScore, level: levelValue)
     }
 }

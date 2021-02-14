@@ -25,4 +25,20 @@ extension HomeRouter: HomePresenterToRouterProtocol {
     func dissmissView() {
         viewController.dismiss(animated: true, completion: nil)
     }
+    
+    func showGameOverView(currentGameLevel:Level) {
+        let controller = HistoryDetailRouter(levelModel: currentGameLevel)
+        controller.historyRouterDelegate = self
+        viewController.presentRouter(controller, presentationStyle: .overCurrentContext)
+    }
+}
+
+extension HomeRouter: HistoryDetailRouterDelegate {
+    func backButtonClicked() {
+        if let navigation:UINavigationController = viewController as? UINavigationController {
+            if let homeView:HomeViewController = navigation.viewControllers.first as? HomeViewController {
+                homeView.checkMove()
+            }
+        }
+    }
 }

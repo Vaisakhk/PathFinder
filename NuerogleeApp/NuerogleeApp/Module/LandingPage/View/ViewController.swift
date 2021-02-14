@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var gameRuleLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     
+    @IBOutlet weak var levelLabel: UILabel!
     //MARK:- UIView Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,7 @@ class ViewController: UIViewController {
 extension ViewController : LandingPresenterToViewProtocol {
     func refreshView() {
         scoreLabel.text = "Total Score : " + "\(presenter?.totalScore ?? 0)"
+        levelLabel.text = "Current Level : " + "\(presenter?.currentLevel ?? 0)"
     }
     
     

@@ -127,7 +127,7 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
         if(isFinished) {
             currentLevelModel?.isFinished = true
             coreDataHandler.saveContext()
-            presenter?.levelCompletedWithSuccess(message:getFinishedMessage())
+            presenter?.levelCompletedWithSuccess(message:getFinishedMessage(), for: currentLevelModel!)
         }
     }
     

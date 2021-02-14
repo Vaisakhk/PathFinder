@@ -9,6 +9,7 @@ import Foundation
 
 protocol LandingViewToPresenterProtocol: BasePresenterProtocal{
     var totalScore:Int?{ get }
+    var currentLevel:Int?{ get }
     func startGame()
 }
 
@@ -26,7 +27,7 @@ protocol LandingPresenterToInteractorProtocol: BaseInteractorProtocol {
 }
 
 protocol LandingInteractorToPresenterProtocol: BaseInteractorToPresenterProtocol {
-    func scoreResultData(data:Int)
+    func scoreResultData(data:Int, level:Int)
     func scoreResultCompletedWithSuccess(data:Int,index:Int)
     func scoreResultCompletedWithError(errorString:String)
 }

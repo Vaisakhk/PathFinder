@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE1F625925D8BF4400C7154A /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F625725D8BF4400C7154A /* HistoryTableViewCell.swift */; };
+		CE1F625A25D8BF4400C7154A /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE1F625825D8BF4400C7154A /* HistoryTableViewCell.xib */; };
+		CE42DCEE25D8B72A0096CEF5 /* HistoryDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42DCE425D8B72A0096CEF5 /* HistoryDetailPresenter.swift */; };
+		CE42DCEF25D8B72A0096CEF5 /* HistoryDetailProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42DCE625D8B72A0096CEF5 /* HistoryDetailProtocol.swift */; };
+		CE42DCF025D8B72A0096CEF5 /* HistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42DCE825D8B72A0096CEF5 /* HistoryDetailViewController.swift */; };
+		CE42DCF125D8B72A0096CEF5 /* HistoryDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE42DCE925D8B72A0096CEF5 /* HistoryDetailViewController.xib */; };
+		CE42DCF225D8B72A0096CEF5 /* HistoryDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42DCEB25D8B72A0096CEF5 /* HistoryDetailInteractor.swift */; };
+		CE42DCF325D8B72A0096CEF5 /* HistoryDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42DCED25D8B72A0096CEF5 /* HistoryDetailRouter.swift */; };
 		CE9B645525D811B1001E0F37 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9B645425D811B1001E0F37 /* Constants.swift */; };
 		CEECCA4225D7528B00823D37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEECCA2625D7528B00823D37 /* Assets.xcassets */; };
 		CEECCA4325D7528B00823D37 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEECCA2725D7528B00823D37 /* LaunchScreen.storyboard */; };
@@ -38,6 +46,14 @@
 /* Begin PBXFileReference section */
 		CE0B4E7A25D52DCA00353CB8 /* NuerogleeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NuerogleeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0B4E8B25D52DCD00353CB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE1F625725D8BF4400C7154A /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		CE1F625825D8BF4400C7154A /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
+		CE42DCE425D8B72A0096CEF5 /* HistoryDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDetailPresenter.swift; sourceTree = "<group>"; };
+		CE42DCE625D8B72A0096CEF5 /* HistoryDetailProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDetailProtocol.swift; sourceTree = "<group>"; };
+		CE42DCE825D8B72A0096CEF5 /* HistoryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDetailViewController.swift; sourceTree = "<group>"; };
+		CE42DCE925D8B72A0096CEF5 /* HistoryDetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HistoryDetailViewController.xib; sourceTree = "<group>"; };
+		CE42DCEB25D8B72A0096CEF5 /* HistoryDetailInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDetailInteractor.swift; sourceTree = "<group>"; };
+		CE42DCED25D8B72A0096CEF5 /* HistoryDetailRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDetailRouter.swift; sourceTree = "<group>"; };
 		CE9B645425D811B1001E0F37 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		CEECCA2625D7528B00823D37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEECCA2825D7528B00823D37 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -106,6 +122,61 @@
 			path = NuerogleeApp;
 			sourceTree = "<group>";
 		};
+		CE42DCE225D8B72A0096CEF5 /* HistoryDetail */ = {
+			isa = PBXGroup;
+			children = (
+				CE42DCE325D8B72A0096CEF5 /* Presenter */,
+				CE42DCE525D8B72A0096CEF5 /* Protocol */,
+				CE42DCE725D8B72A0096CEF5 /* View */,
+				CE42DCEA25D8B72A0096CEF5 /* Interactor */,
+				CE42DCEC25D8B72A0096CEF5 /* Router */,
+			);
+			path = HistoryDetail;
+			sourceTree = "<group>";
+		};
+		CE42DCE325D8B72A0096CEF5 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CE42DCE425D8B72A0096CEF5 /* HistoryDetailPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		CE42DCE525D8B72A0096CEF5 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				CE42DCE625D8B72A0096CEF5 /* HistoryDetailProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		CE42DCE725D8B72A0096CEF5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE42DCE825D8B72A0096CEF5 /* HistoryDetailViewController.swift */,
+				CE42DCE925D8B72A0096CEF5 /* HistoryDetailViewController.xib */,
+				CE1F625725D8BF4400C7154A /* HistoryTableViewCell.swift */,
+				CE1F625825D8BF4400C7154A /* HistoryTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		CE42DCEA25D8B72A0096CEF5 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				CE42DCEB25D8B72A0096CEF5 /* HistoryDetailInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		CE42DCEC25D8B72A0096CEF5 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				CE42DCED25D8B72A0096CEF5 /* HistoryDetailRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		CE9B645325D811B1001E0F37 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +200,7 @@
 			children = (
 				CEECCA3625D7528B00823D37 /* LandingPage */,
 				CEECCA2C25D7528B00823D37 /* Home */,
+				CE42DCE225D8B72A0096CEF5 /* HistoryDetail */,
 				CEECCA3325D7528B00823D37 /* CustomView */,
 				CEECCA3825D7528B00823D37 /* Base */,
 			);
@@ -338,7 +410,9 @@
 			files = (
 				CEECCA4425D7528B00823D37 /* Main.storyboard in Resources */,
 				CEECCA4225D7528B00823D37 /* Assets.xcassets in Resources */,
+				CE42DCF125D8B72A0096CEF5 /* HistoryDetailViewController.xib in Resources */,
 				CEECCA4325D7528B00823D37 /* LaunchScreen.storyboard in Resources */,
+				CE1F625A25D8BF4400C7154A /* HistoryTableViewCell.xib in Resources */,
 				CEECCA5725D7547A00823D37 /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,10 +426,13 @@
 			files = (
 				CEECCA4725D7528B00823D37 /* BoxView.swift in Sources */,
 				CE9B645525D811B1001E0F37 /* Constants.swift in Sources */,
+				CE1F625925D8BF4400C7154A /* HistoryTableViewCell.swift in Sources */,
+				CE42DCEE25D8B72A0096CEF5 /* HistoryDetailPresenter.swift in Sources */,
 				CEECCA7A25D758E400823D37 /* HomeProtocol.swift in Sources */,
 				CEECCA7125D7565600823D37 /* CoreDataHandler.swift in Sources */,
 				CEECCA4B25D7528B00823D37 /* BasePresenter.swift in Sources */,
 				CEECCA4C25D7528B00823D37 /* BaseRouter.swift in Sources */,
+				CE42DCF225D8B72A0096CEF5 /* HistoryDetailInteractor.swift in Sources */,
 				CEECCA6725D754F500823D37 /* LandingProtocol.swift in Sources */,
 				CEECCA6A25D7550700823D37 /* LandingPresenter.swift in Sources */,
 				CEECCA6D25D7552A00823D37 /* LandingInteractor.swift in Sources */,
@@ -364,13 +441,16 @@
 				CEECCA6425D754E600823D37 /* LandingRouter.swift in Sources */,
 				CEECCA5F25D7548300823D37 /* ViewController.swift in Sources */,
 				CEECCA4E25D7528B00823D37 /* BaseViewProtocol.swift in Sources */,
+				CE42DCF025D8B72A0096CEF5 /* HistoryDetailViewController.swift in Sources */,
 				CEECCA5825D7547A00823D37 /* HomeViewController.swift in Sources */,
+				CE42DCEF25D8B72A0096CEF5 /* HistoryDetailProtocol.swift in Sources */,
 				CEECCA5025D7528B00823D37 /* SceneDelegate.swift in Sources */,
 				CEECCA4A25D7528B00823D37 /* BaseInteractorToPresenterProtocol.swift in Sources */,
 				CEECCA4F25D7528B00823D37 /* AppDelegate.swift in Sources */,
 				CEECCA8225D75CF200823D37 /* NuerogleeApp.xcdatamodeld in Sources */,
 				CEECCA7725D758D900823D37 /* HomePresenter.swift in Sources */,
 				CEECCA4D25D7528B00823D37 /* BaseInteractorProtocol.swift in Sources */,
+				CE42DCF325D8B72A0096CEF5 /* HistoryDetailRouter.swift in Sources */,
 				CEECCA7425D758CC00823D37 /* HomeInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

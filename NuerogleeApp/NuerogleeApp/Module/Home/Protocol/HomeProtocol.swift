@@ -34,6 +34,7 @@ protocol HomePresenterToViewProtocol: BaseViewProtocol{
 
 protocol HomePresenterToRouterProtocol: RouterProtocal {
     func dissmissView()
+    func showGameOverView(currentGameLevel:Level)
 }
 
 protocol HomePresenterToInteractorProtocol: BaseInteractorProtocol {
@@ -55,6 +56,6 @@ protocol HomeInteractorToPresenterProtocol: BaseInteractorToPresenterProtocol {
     func scoreResultData(data:Int)
     func scoreResultCompletedWithSuccess(score:Int)
     func scoreResultCompletedWithError(errorString:String)
-    func levelCompletedWithSuccess(message:String)
+    func levelCompletedWithSuccess(message:String, for level:Level)
     func updateCurrentLevel()
 }

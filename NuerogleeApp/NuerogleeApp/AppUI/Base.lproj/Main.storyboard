@@ -37,8 +37,8 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score : 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X5q-od-YLa">
-                                <rect key="frame" x="20" y="150" width="374" height="23.5"/>
-                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                                <rect key="frame" x="20" y="150" width="374" height="29"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="21"/>
                                 <color key="textColor" systemColor="systemPinkColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -48,22 +48,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Level : 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcB-AL-fTG">
+                                <rect key="frame" x="20" y="209" width="374" height="29"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="21"/>
+                                <color key="textColor" systemColor="systemPinkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="WcB-AL-fTG" firstAttribute="top" secondItem="X5q-od-YLa" secondAttribute="bottom" constant="30" id="ELb-FN-Zzh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="1Dc-HO-3Sc" secondAttribute="bottom" constant="40" id="MdA-rL-1FG"/>
                             <constraint firstItem="X5q-od-YLa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="106" id="P0n-5X-CLj"/>
                             <constraint firstItem="WMz-9N-LND" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="SoN-fL-xId"/>
                             <constraint firstItem="1Dc-HO-3Sc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="UsL-yV-roQ"/>
                             <constraint firstItem="X5q-od-YLa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Vco-ge-PbJ"/>
+                            <constraint firstItem="WcB-AL-fTG" firstAttribute="leading" secondItem="X5q-od-YLa" secondAttribute="leading" id="Waz-fx-4pQ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="1Dc-HO-3Sc" secondAttribute="trailing" constant="20" id="cip-Zp-bBm"/>
+                            <constraint firstItem="WcB-AL-fTG" firstAttribute="trailing" secondItem="X5q-od-YLa" secondAttribute="trailing" id="io6-zU-54J"/>
                             <constraint firstItem="WMz-9N-LND" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="tlJ-Nz-ctr"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="X5q-od-YLa" secondAttribute="trailing" constant="20" id="vm6-hR-MwR"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="gameRuleLabel" destination="1Dc-HO-3Sc" id="mxW-Sw-d0S"/>
+                        <outlet property="levelLabel" destination="WcB-AL-fTG" id="AVc-IP-rqE"/>
                         <outlet property="scoreLabel" destination="X5q-od-YLa" id="sYw-3v-jHg"/>
                     </connections>
                 </viewController>

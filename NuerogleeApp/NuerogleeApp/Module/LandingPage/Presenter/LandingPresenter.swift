@@ -19,6 +19,10 @@ class LandingPresenter: LandingViewToPresenterProtocol {
         }
     }
     
+    var currentLevel:Int?{
+        didSet {
+        }
+    }
     //MARK:- Initialization
     init(router: LandingPresenterToRouterProtocol, view: LandingPresenterToViewProtocol, interactor: LandingPresenterToInteractorProtocol) {
         _view = view
@@ -39,7 +43,8 @@ class LandingPresenter: LandingViewToPresenterProtocol {
 
 //MARK:- Interactor to presenter Protocols
 extension LandingPresenter : LandingInteractorToPresenterProtocol {
-    func scoreResultData(data: Int) {
+    func scoreResultData(data: Int, level: Int) {
+        currentLevel = level
         totalScore = data
     }
     
