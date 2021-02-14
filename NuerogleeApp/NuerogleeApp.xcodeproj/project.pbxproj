@@ -23,6 +23,11 @@
 		CE1F628F25D909EC00C7154A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F628725D909EC00C7154A /* HomeViewController.swift */; };
 		CE1F629025D909EC00C7154A /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F628925D909EC00C7154A /* HomeInteractor.swift */; };
 		CE1F629125D909EC00C7154A /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F628B25D909EC00C7154A /* HomeRouter.swift */; };
+		CE1F629B25D90B7800C7154A /* NuerogleeAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F629A25D90B7800C7154A /* NuerogleeAppTests.swift */; };
+		CE1F62A525D90BE000C7154A /* LandingInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F62A425D90BE000C7154A /* LandingInteractorTests.swift */; };
+		CE1F62A925D90EEE00C7154A /* HomeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F62A825D90EEE00C7154A /* HomeInteractorTests.swift */; };
+		CE1F62B325D9223A00C7154A /* HistoryInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F62B225D9223A00C7154A /* HistoryInteractorTests.swift */; };
+		CE1F62B725D9239800C7154A /* HistoryDetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F62B625D9239800C7154A /* HistoryDetailInteractorTests.swift */; };
 		CE42DCEE25D8B72A0096CEF5 /* HistoryDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42DCE425D8B72A0096CEF5 /* HistoryDetailPresenter.swift */; };
 		CE42DCEF25D8B72A0096CEF5 /* HistoryDetailProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42DCE625D8B72A0096CEF5 /* HistoryDetailProtocol.swift */; };
 		CE42DCF025D8B72A0096CEF5 /* HistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42DCE825D8B72A0096CEF5 /* HistoryDetailViewController.swift */; };
@@ -51,6 +56,16 @@
 		CEECCA8225D75CF200823D37 /* NuerogleeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CEECCA8025D75CF200823D37 /* NuerogleeApp.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		CE1F629D25D90B7800C7154A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE0B4E7225D52DCA00353CB8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CE0B4E7925D52DCA00353CB8;
+			remoteInfo = NuerogleeApp;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		CE0B4E7A25D52DCA00353CB8 /* NuerogleeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NuerogleeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE0B4E8B25D52DCD00353CB8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -70,6 +85,13 @@
 		CE1F628725D909EC00C7154A /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CE1F628925D909EC00C7154A /* HomeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		CE1F628B25D909EC00C7154A /* HomeRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
+		CE1F629825D90B7800C7154A /* NuerogleeAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NuerogleeAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE1F629A25D90B7800C7154A /* NuerogleeAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NuerogleeAppTests.swift; sourceTree = "<group>"; };
+		CE1F629C25D90B7800C7154A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE1F62A425D90BE000C7154A /* LandingInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingInteractorTests.swift; sourceTree = "<group>"; };
+		CE1F62A825D90EEE00C7154A /* HomeInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTests.swift; sourceTree = "<group>"; };
+		CE1F62B225D9223A00C7154A /* HistoryInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryInteractorTests.swift; sourceTree = "<group>"; };
+		CE1F62B625D9239800C7154A /* HistoryDetailInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailInteractorTests.swift; sourceTree = "<group>"; };
 		CE42DCE425D8B72A0096CEF5 /* HistoryDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDetailPresenter.swift; sourceTree = "<group>"; };
 		CE42DCE625D8B72A0096CEF5 /* HistoryDetailProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDetailProtocol.swift; sourceTree = "<group>"; };
 		CE42DCE825D8B72A0096CEF5 /* HistoryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDetailViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +128,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CE1F629525D90B7800C7154A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -113,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				CE0B4E7C25D52DCA00353CB8 /* NuerogleeApp */,
+				CE1F629925D90B7800C7154A /* NuerogleeAppTests */,
 				CE0B4E7B25D52DCA00353CB8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -121,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				CE0B4E7A25D52DCA00353CB8 /* NuerogleeApp.app */,
+				CE1F629825D90B7800C7154A /* NuerogleeAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -244,6 +275,19 @@
 				CE1F628B25D909EC00C7154A /* HomeRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		CE1F629925D90B7800C7154A /* NuerogleeAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				CE1F629A25D90B7800C7154A /* NuerogleeAppTests.swift */,
+				CE1F629C25D90B7800C7154A /* Info.plist */,
+				CE1F62A425D90BE000C7154A /* LandingInteractorTests.swift */,
+				CE1F62A825D90EEE00C7154A /* HomeInteractorTests.swift */,
+				CE1F62B225D9223A00C7154A /* HistoryInteractorTests.swift */,
+				CE1F62B625D9239800C7154A /* HistoryDetailInteractorTests.swift */,
+			);
+			path = NuerogleeAppTests;
 			sourceTree = "<group>";
 		};
 		CE42DCE225D8B72A0096CEF5 /* HistoryDetail */ = {
@@ -443,6 +487,24 @@
 			productReference = CE0B4E7A25D52DCA00353CB8 /* NuerogleeApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		CE1F629725D90B7800C7154A /* NuerogleeAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE1F629F25D90B7800C7154A /* Build configuration list for PBXNativeTarget "NuerogleeAppTests" */;
+			buildPhases = (
+				CE1F629425D90B7800C7154A /* Sources */,
+				CE1F629525D90B7800C7154A /* Frameworks */,
+				CE1F629625D90B7800C7154A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CE1F629E25D90B7800C7154A /* PBXTargetDependency */,
+			);
+			name = NuerogleeAppTests;
+			productName = NuerogleeAppTests;
+			productReference = CE1F629825D90B7800C7154A /* NuerogleeAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -454,6 +516,10 @@
 				TargetAttributes = {
 					CE0B4E7925D52DCA00353CB8 = {
 						CreatedOnToolsVersion = 12.2;
+					};
+					CE1F629725D90B7800C7154A = {
+						CreatedOnToolsVersion = 12.2;
+						TestTargetID = CE0B4E7925D52DCA00353CB8;
 					};
 				};
 			};
@@ -471,6 +537,7 @@
 			projectRoot = "";
 			targets = (
 				CE0B4E7925D52DCA00353CB8 /* NuerogleeApp */,
+				CE1F629725D90B7800C7154A /* NuerogleeAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -488,6 +555,13 @@
 				CE1F627B25D8F43500C7154A /* HistoryHomeCell.xib in Resources */,
 				CE1F625A25D8BF4400C7154A /* HistoryTableViewCell.xib in Resources */,
 				CE1F628E25D909EC00C7154A /* HomeViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CE1F629625D90B7800C7154A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -535,7 +609,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CE1F629425D90B7800C7154A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE1F62A925D90EEE00C7154A /* HomeInteractorTests.swift in Sources */,
+				CE1F62B725D9239800C7154A /* HistoryDetailInteractorTests.swift in Sources */,
+				CE1F62A525D90BE000C7154A /* LandingInteractorTests.swift in Sources */,
+				CE1F629B25D90B7800C7154A /* NuerogleeAppTests.swift in Sources */,
+				CE1F62B325D9223A00C7154A /* HistoryInteractorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CE1F629E25D90B7800C7154A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CE0B4E7925D52DCA00353CB8 /* NuerogleeApp */;
+			targetProxy = CE1F629D25D90B7800C7154A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CEECCA2725D7528B00823D37 /* LaunchScreen.storyboard */ = {
@@ -713,6 +807,46 @@
 			};
 			name = Release;
 		};
+		CE1F62A025D90B7800C7154A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6C4569BGYW;
+				INFOPLIST_FILE = NuerogleeAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CL.NuerogleeAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NuerogleeApp.app/NuerogleeApp";
+			};
+			name = Debug;
+		};
+		CE1F62A125D90B7800C7154A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6C4569BGYW;
+				INFOPLIST_FILE = NuerogleeAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = CL.NuerogleeAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NuerogleeApp.app/NuerogleeApp";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -730,6 +864,15 @@
 			buildConfigurations = (
 				CE0B4E8F25D52DCD00353CB8 /* Debug */,
 				CE0B4E9025D52DCD00353CB8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE1F629F25D90B7800C7154A /* Build configuration list for PBXNativeTarget "NuerogleeAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE1F62A025D90B7800C7154A /* Debug */,
+				CE1F62A125D90B7800C7154A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -156,7 +156,7 @@ extension HomePresenter : HomeInteractorToPresenterProtocol {
         
     }
 
-    func levelCompletedWithSuccess(message: String, for level: Level) {
+    func levelCompletedWithSuccess(for level: Level) {
         _router?.showGameOverView(currentGameLevel: level)
 //        _router?.showAlertPopup(with: message, title: AlertConstants.alertTitle, successButtonTitle: AlertConstants.closeButtonTitle, successBlock: {[weak self] (isSuccess) in
 //            self?._view?.moveToNextLevel()

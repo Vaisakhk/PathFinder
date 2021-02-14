@@ -55,6 +55,6 @@ protocol HomeInteractorToPresenterProtocol: BaseInteractorToPresenterProtocol {
     func scoreResultData(data:Int)
     func scoreResultCompletedWithSuccess(score:Int)
     func scoreResultCompletedWithError(errorString:String)
-    func levelCompletedWithSuccess(message:String, for level:Level)
+    func levelCompletedWithSuccess(for level:Level)
     func updateCurrentLevel()
 }

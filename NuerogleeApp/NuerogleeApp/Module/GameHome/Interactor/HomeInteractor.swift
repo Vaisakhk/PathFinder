@@ -48,7 +48,7 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
         presenter?.timerResultData(seconds: seconds, timeString: "00:00:00")
     }
     
-    @objc func updateTimer() {
+    @objc private func updateTimer() {
         seconds += 1
         presenter?.timerResultData(seconds: seconds, timeString: timeString(time: TimeInterval(seconds)) )
     }
@@ -123,7 +123,9 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
         if(isFinished) {
             currentLevelModel?.isFinished = true
             coreDataHandler.saveContext()
-            presenter?.levelCompletedWithSuccess(message:getFinishedMessage(), for: currentLevelModel!)
+            if let currentModel = currentLevelModel {
+                presenter?.levelCompletedWithSuccess(for: currentModel)
+            }
         }
     }
     
@@ -138,26 +140,26 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
         }
     }
     
-    private func getFinishedMessage() ->String {
-        var message = ""
-        message = message + "Congratss Completed " + "\(currentLevel ?? 0)" + " Level\n"
-        message = message + "Your Score is " + "\(currentLevelModel?.score ?? 0)" + "\n"
-        message = message + "Total time Taken for this level " + timeString(time: TimeInterval(currentLevelModel?.timeTaken ?? 0))
-        message = message + "\n Your Movements \n\n"
-        if let scores:[Score] = currentLevelModel?.scores?.allObjects as? [Score] {
-            var tempScore = scores
-            tempScore.sort { (a, b) -> Bool in
-                a.date! < b.date!
-            }
-            for score in tempScore {
-                message = message + "Date "+(score.date ?? "") + "\n"
-                message = message + "Time Taken "+"\(score.time )" + "\n"
-                message = message + "score "+"\(score.score )" + "\n"
-                message = message + (score.isPositiveMove ? " This Move is Success" : "This Move is Failure") + "\n"
-            }
-        }
-        return message
-    }
+//    private func getFinishedMessage() ->String {
+//        var message = ""
+//        message = message + "Congratss Completed " + "\(currentLevel ?? 0)" + " Level\n"
+//        message = message + "Your Score is " + "\(currentLevelModel?.score ?? 0)" + "\n"
+//        message = message + "Total time Taken for this level " + timeString(time: TimeInterval(currentLevelModel?.timeTaken ?? 0))
+//        message = message + "\n Your Movements \n\n"
+//        if let scores:[Score] = currentLevelModel?.scores?.allObjects as? [Score] {
+//            var tempScore = scores
+//            tempScore.sort { (a, b) -> Bool in
+//                a.date! < b.date!
+//            }
+//            for score in tempScore {
+//                message = message + "Date "+(score.date ?? "") + "\n"
+//                message = message + "Time Taken "+"\(score.time )" + "\n"
+//                message = message + "score "+"\(score.score )" + "\n"
+//                message = message + (score.isPositiveMove ? " This Move is Success" : "This Move is Failure") + "\n"
+//            }
+//        }
+//        return message
+//    }
     
     private func saveCurrentGameLevel() {
         let levelData:[Level] = coreDataHandler.getAllDatasWithPredicate(entity: "Level", predicate: NSPredicate(format: "(level ==  %@)", "\(currentLevel ?? 0)"), sortDescriptor: NSSortDescriptor(key: "level", ascending: true)) as? [Level] ?? []
