@@ -189,7 +189,7 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
         score?.score = Int32(scoreValue)
         if let tempScrore = score {
             currentLevelModel?.addToScores(tempScrore)
-            currentLevelModel?.timeTaken = Int32(seconds)
+            currentLevelModel?.timeTaken = Int32(seconds-5)
             currentLevelModel?.score = Int32(currentScore)
         }
         coreDataHandler.saveContext()
