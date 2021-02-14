@@ -13,7 +13,7 @@ class HistoryInteractor: HistoryPresenterToInteractorProtocol {
     var presenter: HistoryInteractorToPresenterProtocol?
     
     func getAllLevels() {
-        let levelData:[Level] = coreDataHandler.getAllDatasWithPredicate(entity: "Level", predicate: nil, sortDescriptor: NSSortDescriptor(key: "level", ascending: true)) as? [Level] ?? []
+        let levelData:[Level] = coreDataHandler.getAllDatasWithPredicate(entity: "Level", predicate: nil, sortDescriptor: NSSortDescriptor(key: "level", ascending: false)) as? [Level] ?? []
         presenter?.getLevelSuccess(levelsData: levelData)
     }
 

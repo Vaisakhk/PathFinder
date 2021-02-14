@@ -28,6 +28,7 @@
 		CE1F62A925D90EEE00C7154A /* HomeInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F62A825D90EEE00C7154A /* HomeInteractorTests.swift */; };
 		CE1F62B325D9223A00C7154A /* HistoryInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F62B225D9223A00C7154A /* HistoryInteractorTests.swift */; };
 		CE1F62B725D9239800C7154A /* HistoryDetailInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE1F62B625D9239800C7154A /* HistoryDetailInteractorTests.swift */; };
+		CE1F62BB25D9316600C7154A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = CE1F62BA25D9316600C7154A /* README.md */; };
 		CE42DCEE25D8B72A0096CEF5 /* HistoryDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42DCE425D8B72A0096CEF5 /* HistoryDetailPresenter.swift */; };
 		CE42DCEF25D8B72A0096CEF5 /* HistoryDetailProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42DCE625D8B72A0096CEF5 /* HistoryDetailProtocol.swift */; };
 		CE42DCF025D8B72A0096CEF5 /* HistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42DCE825D8B72A0096CEF5 /* HistoryDetailViewController.swift */; };
@@ -92,6 +93,7 @@
 		CE1F62A825D90EEE00C7154A /* HomeInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeInteractorTests.swift; sourceTree = "<group>"; };
 		CE1F62B225D9223A00C7154A /* HistoryInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryInteractorTests.swift; sourceTree = "<group>"; };
 		CE1F62B625D9239800C7154A /* HistoryDetailInteractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryDetailInteractorTests.swift; sourceTree = "<group>"; };
+		CE1F62BA25D9316600C7154A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		CE42DCE425D8B72A0096CEF5 /* HistoryDetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDetailPresenter.swift; sourceTree = "<group>"; };
 		CE42DCE625D8B72A0096CEF5 /* HistoryDetailProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDetailProtocol.swift; sourceTree = "<group>"; };
 		CE42DCE825D8B72A0096CEF5 /* HistoryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryDetailViewController.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 		CE0B4E7125D52DCA00353CB8 = {
 			isa = PBXGroup;
 			children = (
+				CE1F62BA25D9316600C7154A /* README.md */,
 				CE0B4E7C25D52DCA00353CB8 /* NuerogleeApp */,
 				CE1F629925D90B7800C7154A /* NuerogleeAppTests */,
 				CE0B4E7B25D52DCA00353CB8 /* Products */,
@@ -553,6 +556,7 @@
 				CE1F626E25D8E97A00C7154A /* HistoryViewController.xib in Resources */,
 				CEECCA4325D7528B00823D37 /* LaunchScreen.storyboard in Resources */,
 				CE1F627B25D8F43500C7154A /* HistoryHomeCell.xib in Resources */,
+				CE1F62BB25D9316600C7154A /* README.md in Resources */,
 				CE1F625A25D8BF4400C7154A /* HistoryTableViewCell.xib in Resources */,
 				CE1F628E25D909EC00C7154A /* HomeViewController.xib in Resources */,
 			);

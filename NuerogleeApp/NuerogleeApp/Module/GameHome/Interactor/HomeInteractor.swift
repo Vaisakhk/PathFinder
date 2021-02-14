@@ -15,7 +15,7 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
     var presenter: HomeInteractorToPresenterProtocol?
     var timer = Timer()
     var seconds = 0
-    var previousMoveTime = 0
+    var previousMoveTime = 5
     var isTimerRunning = false
     
     var currentLevel: Int? {
@@ -45,6 +45,7 @@ class HomeInteractor: HomePresenterToInteractorProtocol {
     func restartTimer() {
         timer.invalidate()
         seconds = 0
+        previousMoveTime = 5
         presenter?.timerResultData(seconds: seconds, timeString: "00:00:00")
     }
     

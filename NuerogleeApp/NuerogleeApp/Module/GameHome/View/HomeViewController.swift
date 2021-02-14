@@ -42,6 +42,7 @@ class HomeViewController: UIViewController {
             renderedLines.trailingAnchor.constraint(equalTo: view.trailingAnchor),
         ])
         addBackBarButtonCustom()
+        self.title = "Nueroglee App"
     }
 
     override func viewWillAppear(_ animated: Bool) {

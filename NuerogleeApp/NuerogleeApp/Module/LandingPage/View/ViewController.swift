@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     //MARK:- UIView Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.title = "Nueroglee App"
     }
     
     override func viewWillAppear(_ animated: Bool) {
