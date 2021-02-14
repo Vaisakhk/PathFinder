@@ -44,10 +44,10 @@
     - History screen
        - All the levels which user played will show in history
        - Total score obtained, time taken, completed status will display in table view.
-       - On clicking each item in table view an analytics page will display. Which will show all the user moves, time taken, score obtaind etc.
+       - On clicking each item in table view an analytics page will display. Which will show all the user moves, time taken, score obtained etc.
        
 ### Depedency
     - No dependancy on external libraries
 
 ### Unit Testing
-    - Created Unit test for bussiness logic (Landing, Home, History andHistory Detail interactor)
+    - Created Unit test for business logic (Landing, Home, History andHistory Detail interactor)
