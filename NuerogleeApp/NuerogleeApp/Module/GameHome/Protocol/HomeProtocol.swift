@@ -52,9 +52,7 @@ protocol HomePresenterToInteractorProtocol: BaseInteractorProtocol {
 
 protocol HomeInteractorToPresenterProtocol: BaseInteractorToPresenterProtocol {
     func timerResultData(seconds:Int,timeString:String)
-    func scoreResultData(data:Int)
     func scoreResultCompletedWithSuccess(score:Int)
-    func scoreResultCompletedWithError(errorString:String)
     func levelCompletedWithSuccess(for level:Level)
     func updateCurrentLevel()
 }

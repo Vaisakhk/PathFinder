@@ -39,7 +39,6 @@ class HomePresenter: HomeViewToPresenterProtocol {
         _router = router
         _interactor = interactor
         _maxYValue = maxYValue
-//        currentLevel = 0
         currentScore = 0
         boxConnections = []
         userConnections = []
@@ -120,11 +119,7 @@ class HomePresenter: HomeViewToPresenterProtocol {
             connection.dragFinished = { [weak self] in
                 if ((self?.currentSecond ?? 0) > 5) {
                     self?._interactor?.overlapped(movedConnection: connection, boxConnections: self?.boxConnections ?? [], maxYValue: self?._maxYValue ?? 0)
-                    //self?.overlapped(movedConnection: connection)
                     self?._interactor?.isLevelClearForNextGame(boxConnections: self?.boxConnections ?? [])
-//                    if (self?._interactor?.levelClear(boxConnections: self?.boxConnections ?? []) ?? false) {
-//                        self?._view?.moveToNextLevel()
-//                    }
                 }else {
                     
                 }
@@ -144,23 +139,12 @@ extension HomePresenter : HomeInteractorToPresenterProtocol {
         }
     }
     
-    func scoreResultData(data: Int) {
-        
-    }
-    
     func scoreResultCompletedWithSuccess(score: Int) {
         currentScore = score
-    }
-    
-    func scoreResultCompletedWithError(errorString: String) {
-        
     }
 
     func levelCompletedWithSuccess(for level: Level) {
         _router?.showGameOverView(currentGameLevel: level)
-//        _router?.showAlertPopup(with: message, title: AlertConstants.alertTitle, successButtonTitle: AlertConstants.closeButtonTitle, successBlock: {[weak self] (isSuccess) in
-//            self?._view?.moveToNextLevel()
-//        })
     }
     
     func updateCurrentLevel() {
